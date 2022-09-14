@@ -3,16 +3,8 @@ package chapter02;
 import java.util.Scanner;
 
 public class Member {
-//chapter02.Member 프로젝트내 이름이 동일할 경우 구분 
-//변수 : 메모리 공간을 생성하고 (데이터 저장해서 나중에 쓰려고) 주소하는 것
+
 	public static void main(String[] args) {
-		/*
-	    ① String(문자열) 타입의 이름을 저장할 수 있는 변수 name을 정의
-	    ② int(정수) 타입의 나이를 저장할 수 있는 변수 age를 정의
-	    ③ double 타입의 키를 저장할 수 있는 변수 height를 정의
-	    ④ boolean 타입의 JAVA책의 보유 여부를 저장할 수 있는 변수 hasBook를 정의 (보유 여부, 논리적으로 판단)
-	    ⑤ 이름과 나이, 키, 책의 보유 여부를 출력
-		 */
 		
 		Scanner in = new Scanner (System.in);
 		
