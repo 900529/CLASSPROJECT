@@ -1,0 +1,16 @@
+package first;
+
+public class Calculator {
+
+	public static void main(String[]args) {
+	  Sum(10,20);
+	  
+	  public static void Sum(int num1, int num2) {
+		  int result = 0;
+		  result = num1+num2;
+		  System.out.println (num1+"+"+num2+"="+result);
+		  
+		  
+	  }
+	
+	}
