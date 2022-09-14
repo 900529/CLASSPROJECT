@@ -29,7 +29,7 @@ public class ValiableRealNumber {
 		double result = num5+num6;
 		System.out.println(result);
 		
-		int num7; = 10
+		int num7=0; 
 		
 		System.out.println(num7);
 		
