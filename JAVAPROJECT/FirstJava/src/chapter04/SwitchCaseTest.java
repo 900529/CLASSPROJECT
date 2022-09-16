@@ -3,12 +3,12 @@ package chapter04;
 public class SwitchCaseTest {
 
 	public static void main(String[] args) {
-		
+
 		int key = 3;
-	
-	   // switch case : 특정 값 하나를 비교해서 분기하는 조건문
-	   // key 값과 case 다음에 오는 값을 비교해서 실행
-		switch (key) {                           // switch 두번째 내용, key, case 옆 value 값 맞으면 처리됨
+
+		// switch case : 특정 값 하나를 비교해서 분기하는 조건문
+		// key 값과 case 다음에 오는 값을 비교해서 실행
+		switch (key) { // switch 두번째 내용, key, case 옆 value 값 맞으면 처리됨
 		case 1:
 			System.out.println("1의 결과 !!!!");
 			// DB
@@ -16,14 +16,14 @@ public class SwitchCaseTest {
 			// 연산
 			// 메소드 호출
 			// 객체 생성
-			//break;
+			// break;
 
-		case 2 : 
+		case 2:
 			System.out.println("2일 때 처리");
-			//break;
-			
-		//default: // 위에 정의된 case 조건에 맞지 않는 나머지 
-			//System.out.println("1 또는 2가 아닌 나머지");
+			// break;
+
+			// default: // 위에 정의된 case 조건에 맞지 않는 나머지
+			// System.out.println("1 또는 2가 아닌 나머지");
 		}
 
 	}
