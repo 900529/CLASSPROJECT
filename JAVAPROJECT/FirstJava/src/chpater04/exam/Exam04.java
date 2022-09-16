@@ -5,8 +5,9 @@ public class Exam04 {
 	public static void main(String[] args) {
 		// 문제 4. 
 		// 다음 식을 만족하는 조합을 찾는 프로그램 작성
-		// A B
-		// B A +
+		// A B / 10의 자리 A / 1의 자리 B
+		// B A + / 10의 자리 B / 1의 자리 A
+		// 10A + B + 10B + A
 		// -----------
 		// 9 9 
 		// A와 B값의 조합들을 찾아보자 
