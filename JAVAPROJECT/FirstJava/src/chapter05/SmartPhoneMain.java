@@ -44,7 +44,8 @@ public class SmartPhoneMain {
 		sp.volumeDown();
 		System.out.println("현재 볼륨 :" + sp.volumeSize);
 
-		// sp=null; => null 하게되면 가르키는 것이 없다. 더이상 참조하는 것이 없기 때문에 ?!
+		// sp=null; => null 하게되면 가르키는 것이 없다. 
+		// 더이상 참조하는 것이 없기 때문에 ?!
 
 	}
 
