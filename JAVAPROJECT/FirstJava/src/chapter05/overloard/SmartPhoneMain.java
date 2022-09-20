@@ -19,7 +19,7 @@ public class SmartPhoneMain {
 		// SmartPhone ()
 
 		SmartPhone sp4 = new SmartPhone("APPLE", 50f);
-		 sp4.showInfo();
+		sp4.showInfo();
 
 		SmartPhone sp5 = new SmartPhone("SAMSUNG");
 		sp5.showInfo();

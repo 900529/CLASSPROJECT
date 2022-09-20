@@ -12,6 +12,7 @@ public class VariableTest {
 
 		// 클래스 변수를 참조할 때는 클래스이름.변수이름
 		System.out.println(StaticVariable.cv);
+		System.out.println(StaticVariable.PI);
 		
 	}
 
