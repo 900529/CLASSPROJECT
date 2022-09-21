@@ -8,7 +8,6 @@ public class Students {
 	private int matScore;
 
 	public Students(String name, int korScore, int engScore, int matScore) {
-		super();
 		this.name = name;
 		this.korScore = korScore;
 		this.engScore = engScore;
