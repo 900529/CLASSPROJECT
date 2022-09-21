@@ -24,14 +24,13 @@ public class ArrayTest2 {
 		}
 
 		System.out.println();
-		
-		// 반복을 역순으로 한다면 6 5 4 3 2 1 
-		// 사이즈몰라도 역순으로 하고 싶으면 (int  i=arr2.length -1; i--)
-		// 
-		for(int i=6; i>=0;  i--) {
-			System.out.println(arr2[i]);
+
+		// 반복을 역순으로 한다면 6 5 4 3 2 1
+		// 사이즈몰라도 역순으로 하고 싶으면 (int i=arr2.length -1; i--)
+
+		for (int i = arr2.length - 1; i >= 0; i--) {
+			System.out.println(arr2[i]); // arr2[6]
 		}
-		
-		
+
 	}
 }
