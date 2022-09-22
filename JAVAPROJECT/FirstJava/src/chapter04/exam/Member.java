@@ -1,4 +1,4 @@
-package chpater04.exam;
+package chapter04.exam;
 
 import java.util.Calendar;
 import java.util.Scanner;

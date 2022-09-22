@@ -1,4 +1,4 @@
-package chpater04.exam;
+package chapter04.exam;
 
 public class Exam01 {
 
