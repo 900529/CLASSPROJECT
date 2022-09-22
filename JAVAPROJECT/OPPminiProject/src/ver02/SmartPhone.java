@@ -38,9 +38,49 @@ public class SmartPhone {
 	// (2) 기능
 	// 배열에 인스턴스를 저장하고,
 	// 수정하고 (이름으로 검색)
-	// 삭제
-	// 검색 후 결과 출력,
+	// 삭제 (이름으로 검색)
+	// 검색 후 결과 출력 (이름으로 검색)
 	// 저장된 데이터의 리스트를 출력하는 메소드 정의
+
+	// 삭제 (이름으로 검색)
+	void deleteContact() {
+
+		// 검색어 받기
+		System.out.println("데이터 삭제가 진행됩니다");
+		System.out.println("삭제하고자 하는 이름을 입력해주세요 > ");
+		String name = sc.nextLine();
+
+		// 삭제하고자 하는 index 먼저 찾아야한다! -> 시프트
+		int searchIndex = -1; // 현재 검색의 결과는 없다
+
+		// 데이터 찾기
+		for (int i = 0; i < numOfContact; i++) {
+
+			if (contacts[i].getName().equals(name)) {
+				searchIndex = i;
+				break;
+			}
+		}
+		
+		if(searchIndex<0)
+			System.out.println("찾으시는 데이터가 존재하지 않습니다");
+		return;
+	}
+	
+	Contact contact = contacts[searchIndex];
+	System.out.println("데이터 수정을 진행합니다.");
+	
+	System.out.println("변경하고자 하는 이름을 입력해주세요" + )
+
+
+		// 검색한 index 값으로 분기 : 시프트하거나 검색 결과 이름이 존재하지 않는다!
+		if (searchIndex < 0) {
+			System.out.println("삭제하고자 하는 이름의 데이터가 존재하지 않습니다.");
+		} else {
+			
+		}
+
+	}
 
 	// 검색 후 결과 출력 (이름으로 검색)
 	void searchInfoPrint() {
@@ -81,16 +121,26 @@ public class SmartPhone {
 	// 전체 입력 데이터의 출력
 	void printAllData() { // 퍼블릭 안쓰는 이유는 이 안에 패키지 안에서만 하려구
 		// 배열에 저장된 데이터를 모두 출력
+		
+		if(numOfContact==0) {
+			System.out.println("입력된 정보가 없습니다.");
+			return;
+		}
+		
 		for (int i = 0; i < numOfContact; i++) { // contacts.length;에서 numOfContact 로 수정한 이유는? 추가한 개수만큼만
 			contacts[i].printInfo();
 		}
-	}
 
 	void insertContact() {
 		// 배열에 인스턴스를 저장하고,
 		// 1. 데이터를 받고 2. 인스턴스 생성 3. 배열에 인스턴스의 참조값을 저장
 
 		// Scanner sc = new Scanner(System.in); //이걸 지우고 위에 내용 올림
+
+		if (numOfContact == contacts.length) { // 크거나 같다 하지 못하는 이유는?
+			System.out.println("최대 저장 개수는" + contacts + "개 입니다.");
+			return;
+		}
 
 		String name = null;
 		String phoneNumber = null;

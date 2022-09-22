@@ -6,6 +6,9 @@ public class SmartPhoneMain {
 
 		SmartPhone smartPhone = SmartPhone.getInstance();
 
+		
+		
+		
 		// 입력
 		smartPhone.insertContact();
 
