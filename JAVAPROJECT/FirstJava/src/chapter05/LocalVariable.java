@@ -18,7 +18,7 @@ public class LocalVariable {
 			// i는 for 블록 안에서만 사용가능한 지역변수
 		}
 
-		while (Iv < 0) {
+		while (lv < 0) {
 			int lv2 = 0;
 			System.out.println(num++);
 		}

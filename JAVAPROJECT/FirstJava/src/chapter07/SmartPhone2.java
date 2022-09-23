@@ -12,6 +12,7 @@ public class SmartPhone2 extends Phone { // 상속
 	// 오버라이딩
 	// 상위 클래스에서 정의한 메소드를 재정의
 	// 선언부는 동일하게 정의하고, 처리블록 내부의 코드만 재정
+	@Override
 	void call() {
 		super.call();
 		System.out.println("이어팟을 이용해서 통화합니다.");
