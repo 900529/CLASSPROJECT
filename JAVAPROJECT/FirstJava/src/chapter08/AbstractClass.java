@@ -16,9 +16,11 @@ public abstract class AbstractClass {
 
 	}
 
-	// 추상메소드 : 메소드의 정이만 하고 처리부는 완성하지 않은 메소드
+	// 추상메소드 : 메소드의 정의만 하고 처리부는 완성하지 않은 메소드
 	abstract void abstractMethod();
 
+	// 코드만 보면 완성되지 않았지만, 인스턴스는 만들어서 실행하니~ 
+	// 이 안에 추상메소드를 넣어서 활용~ 
 	void instanceMethod() {
 		abstractMethod();
 	}

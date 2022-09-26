@@ -1,9 +1,9 @@
 package chapter08;
 
-public abstract class Phone {
+public abstract class Phone { // 추상클래스도 abstract 
 
 	String phoneNumber;
-	boolean power; // false , 전원
+	boolean power; // false, 전원
 
 	public Phone(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
@@ -14,7 +14,7 @@ public abstract class Phone {
 		System.out.println("전화 걸기!");
 	}
 
-	// 추상메소드로 정의
+	// 추상메소드로 정의! 앞에 abstract 
 	abstract void turnOn();
 //	{
 //		

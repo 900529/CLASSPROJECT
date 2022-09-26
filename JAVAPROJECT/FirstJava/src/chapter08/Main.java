@@ -7,7 +7,7 @@ public class Main {
 		// FunctionClass fc = new FunctionClass();
 		// fc.print();
 
-		AAA a = new AAA(); // 오류 확인 필요
+		AAA a = new AAAImpl(); 
 		a.printA();
 
 	}

@@ -1,16 +1,9 @@
 package chapter08.phone;
 
-// 클래스 생성시 : SuperClass 상속받을 때 Computers
-// InterFaces 인터페이스 구현할 때 Phone~ : 여러개 선택 가능 
-
-public class SmartPhone extends Computer implements Phone {
+public class PhoneImpl implements Phone {
+//  phone 추상메소드가 3개가 있으니 오버라이딩 되어야 오류가 바로 안보임
 
 	boolean power;
-
-	public SmartPhone(String account) {
-		super(account);
-		this.power = false;
-	}
 
 	@Override
 	public void call() {
@@ -20,6 +13,10 @@ public class SmartPhone extends Computer implements Phone {
 		String number9 = String.valueOf(Phone.PHONE_NUM_9);
 
 		System.out.println(number1 + number1 + number9 + "에 전화를 합니다. 불났어요!!");
+
+		// System.out.println(Phone.PHONE_NUM_1+Phone.PHONE_NUM_1+Phone.PHONE_NUM_9);
+		// //119가 아닌 더하기로 될 수 있음
+
 	}
 
 	@Override
@@ -29,6 +26,7 @@ public class SmartPhone extends Computer implements Phone {
 		if (!power) { // ! 없으면 실행 안됨
 			power = true;
 		}
+
 	}
 
 	@Override
@@ -36,13 +34,6 @@ public class SmartPhone extends Computer implements Phone {
 		if (power) {
 			power = false;
 		}
-	}
-
-	public static void main(String[] args) {
-		SmartPhone phone = new SmartPhone("choired0529@naver.com");
-		phone.call();
-		phone.calculator();
-
 	}
 
 }

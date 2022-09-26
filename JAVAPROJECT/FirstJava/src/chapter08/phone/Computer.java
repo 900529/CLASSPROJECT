@@ -4,6 +4,7 @@ public class Computer {
 
 	String account;
 
+	// 생성자
 	Computer(String account) {
 		this.account = account;
 	}
