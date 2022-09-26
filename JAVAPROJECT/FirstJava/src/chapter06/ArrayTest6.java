@@ -17,6 +17,8 @@ public class ArrayTest6 {
 		for (String name : names) {
 			System.out.println(name);
 		}
+		
+		System.out.println("==========");
 		System.out.println(names[0].length());
 		System.out.println(names[1].equals("이바름"));
 

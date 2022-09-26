@@ -21,7 +21,7 @@ public class PersonMain {
 		Person p1 = (Person) m;
 		Person p2 = f;
 		
-		// p1.hi(); // hi() 는 Person 클래스의 멤버가 아니기 때문에 호출이 불가능  
+		// p1.hi(); // hi()는 Person 클래스의 멤버가 아니기 때문에 호출 불가능  
 		// p2.printSchoolInfo(); 이것도 호출 불가능 
 		
 		System.out.println();

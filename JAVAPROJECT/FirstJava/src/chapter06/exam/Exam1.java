@@ -11,8 +11,8 @@ public class Exam1 {
 
 		for (int i = 0; i < scores.length; i++) {
 			for (int j = 0; j < scores[i].length; j++) {
-				// System.out.println(scores[i][j]);
-				int num = (int) (Math.random() * 51) + 50; // 0+50 <= num <= 50+50
+				// System.out.println(scores[i][j]);  출력목적이 아니니까 
+				int num = (int) (Math.random() * 51) + 50; // 0+50 <= num <= 50+50 // 랜덤하게 넣는 점수
 				scores[i][j] = num;
 			}
 		}
@@ -31,15 +31,15 @@ public class Exam1 {
 			int sum = 0;
 
 			for (int j = 0; j < scores[i].length; j++) {
-				System.out.print(scores[i][j] + "\t");
-				sum += scores[i][j];
+				System.out.print(scores[i][j] + "\t"); // 세번돌고있는 것 // 옆에 이어야되니 프린트만
+				sum += scores[i][j]; 
 
-				// 영어 점수일 때
+				// 국어 점수일 때
 				if (j == 0) {
 					korTotal += scores[i][j];
 				}
 
-				// 국어 점수일 때
+				// 영어 점수일 때
 				if (j == 1) {
 					engTotal += scores[i][j];
 				}
@@ -49,7 +49,7 @@ public class Exam1 {
 					matTotal += scores[i][j];
 				}
 
-				System.out.print(sum + "\t" + (float) sum / scores[i].length);
+				System.out.print(sum + "\t" + (float) sum / scores[i].length);  // 평균 구할때 형변환 float
 				System.out.println();
 
 			}
