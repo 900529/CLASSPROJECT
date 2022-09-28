@@ -9,7 +9,7 @@ public class LocalDateTest {
 	public static void main(String[] args) {
 
 		// jdk 1.8 : LocalDate, LocalDateTime, LocalTime // 현재 날짜를 가져오자!
-		// 이미 만들어진 클래스를 잘 활용하는 것이 중요! 
+		// 이미 만들어진 클래스를 잘 활용하는 것이 중요!
 		LocalDate now = LocalDate.now();
 		System.out.println(now);
 		System.out.println(now.getYear()); // 년도 반환
@@ -32,7 +32,7 @@ public class LocalDateTest {
 		System.out.println("===============================");
 		LocalDateTime now2 = LocalDateTime.now();
 		System.out.println(now2);
-		System.out.println(now2.getYear());ㄹ
+		System.out.println(now2.getYear());
 
 		System.out.println("===============================");
 		LocalDate day = LocalDate.of(2022, 12, 25);

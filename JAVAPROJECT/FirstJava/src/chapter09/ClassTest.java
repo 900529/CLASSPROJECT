@@ -14,21 +14,27 @@ public class ClassTest {
 		System.out.println("변수 리스트 ===============");
 		Field[ ]  fieldList = userClass.getFields();
 		
-		System.out.println(fieldList.)
+		//System.out.println(fieldList.length);
 		
 		for(Field f : fieldList) {
 			System.out.println(f.getName());
 		}
 				
 		System.out.println("생성자 리스트 ===============");
-		for(Constructor<T> c : userClass.getConstructors()) {
-			System.out.println("개수" + c.
+		for(Constructor c : userClass.getConstructors()) {
+			System.out.println("매개 변수 개수 : " + c.getParameterCount());
 					
-				
+			System.out.println("파라미터의 타입 ========");
 					for(Class param : c.getParameterTypes()) {
 							System.out.println(param.getName());
 		}
 		
 	}
 
+		System.out.println("메소드 리스트 =================");
+		for(Method method : userClass.getMethods()) { // 왜 오류?
+			System.out.println(method.getName());
+		}
+		
+}
 }

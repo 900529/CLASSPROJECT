@@ -33,8 +33,8 @@ public class Person {
 		Person p2 = new Person("이바름", "900529-2020215");
 		Person p3 = new Person("최예나", "111111-7777777");
 
-		System.out.println(" p1과 p2는 같은 사람인가? => " + p1.equals(p2));
-		System.out.println(" p1과 p3는 같은 사람인가? => " + p1.equals(p3));
+		System.out.println("p1과 p2는 같은 사람인가? => " + p1.equals(p2));
+		System.out.println("p1과 p3는 같은 사람인가? => " + p1.equals(p3));
 	}
 
 }
