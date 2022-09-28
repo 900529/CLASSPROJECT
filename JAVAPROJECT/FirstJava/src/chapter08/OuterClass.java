@@ -2,10 +2,6 @@ package chapter08;
 
 public class OuterClass extends Object {
 
-	// 내부 클래스 : 클래스 내부에 다른 클래스 정의
-	// 캡슐화 : 클래스를 외부에 노출하지 않아야할때
-	// 이벤트 클래스들이 내부 클래스로 구성되어 있음
-
 	private String name;
 	private int num;
 
@@ -20,14 +16,16 @@ public class OuterClass extends Object {
 
 	}
 
-}
+	// 내부 클래스 : 클래스 내부에 다른 클래스 정의
+	// 캡슐화 : 클래스를 외부에 노출하지 않아야할때
+	// 이벤트 클래스들이 내부 클래스로 구성되어 있음
 
-class InnerClass {
-	InnerClass() {
-		tellYourName();
+	class InnerClass {
+		InnerClass() {
+			tellYourName();
+		}
+
 	}
-
-}
 
 	public static void main(String[] args) {
 
@@ -42,6 +40,10 @@ class InnerClass {
 		OuterClass.InnerClass in1 = out1.new InnerClass();
 		OuterClass.InnerClass in2 = out2.new InnerClass();
 
+		OuterClass.InnerClass in3 = out1.new InnerClass();
+		OuterClass.InnerClass in4 = out2.new InnerClass();
+
+		OuterClass.InnerClass in5 = out1.new InnerClass();
 	}
 
 }

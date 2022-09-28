@@ -5,7 +5,6 @@ public class User {
 	int userIdx;
 	String userId;
 	public User(int userIdx, String userId) {
-		super();
 		this.userIdx = userIdx;
 		this.userId = userId;
 	}
@@ -22,7 +21,7 @@ public class User {
 		this.userId = userId;
 	}
 	
-	
+}
 	
 	
 }
