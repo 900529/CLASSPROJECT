@@ -1,8 +1,8 @@
 package chapter09.exam;
 
-import chapter07.exam.Person;
+import chapter09.exam.Person;
 
-public class MainClass {
+public class Main {
 
 	public static void main(String[] args) {
 		Person p1 = new Person("yena","950000-2005000");
@@ -15,11 +15,6 @@ public class MainClass {
 	for (int i=o; i<=100000000; sum +=++i);
 	long endTime = System.nanoTime();
 	System.out.println("1부터 100000000까지의 합은 :" + sum +
-		
-		
-	}
-		
-
-	}
-
+	
+	
 }
