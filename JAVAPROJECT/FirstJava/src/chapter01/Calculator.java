@@ -1,4 +1,4 @@
-package first;
+package chapter01;
 
 public class Calculator {
 //들여쓰기 가독성때문에 해야함. 

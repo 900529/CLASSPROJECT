@@ -1,4 +1,4 @@
-package first;
+package  chapter01;
 
 public class FirstJava {
 	//main 메소드가 클래스의 시작포인트

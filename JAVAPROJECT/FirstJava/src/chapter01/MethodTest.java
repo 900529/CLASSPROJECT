@@ -1,4 +1,4 @@
-package first;
+package  chapter01;
 
 public class MethodTest {
 
