@@ -1,6 +1,7 @@
 package chapter11.exam;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class Exam2Main {
 
@@ -12,23 +13,23 @@ public class Exam2Main {
 		
 		// Set<E>  : 중복 허용 X, 저장 순서 유지 X
 		// 중복 검사 : hashCode 코드로 검사 => equals 통해 중복 검사
-		
-		// 언제 FootballPlayer 클래스에 hash code??
+	
 		
 		Set<FootballPlayer> players = new HashSet<FootballPlayer>();
 		
-		  FootballPlayer player = new FootballPlayer("이바름", 8, "토트넘", 20);
-		   players.add(player);
-		   players.add(new FootballPlayer("바름", 17, "토트넘", 25));
-		   players.add(new FootballPlayer("강인", 13, "토트넘", 21));
-		   players.add(new FootballPlayer("지성", 9, "토트넘", 24));
-		   players.add(new FootballPlayer("루니", 11, "토트넘", 26));
-		   
+		FootballPlayer player = new FootballPlayer("흥민", 8, "토트넘", 20);
+		players.add(player);
+		players.add(new FootballPlayer("바름", 17, "토트넘", 25));
+		players.add(new FootballPlayer("강인", 13, "토트넘", 21));
+		players.add(new FootballPlayer("지성", 9, "멘유", 24));
+		players.add(new FootballPlayer("루니", 11, "멘유", 26));
+		players.add(new FootballPlayer("흥민", 8, "토트넘", 20));
+		  
 		   System.out.println("보유 선수의 수 : " + players.size());
 
 		   System.out.println("보유 선수 리스트 ======= ");
 		   for(FootballPlayer p : players) {
-			   System.out.println();
+			   System.out.println(p);
 		   }
 		   
 	}

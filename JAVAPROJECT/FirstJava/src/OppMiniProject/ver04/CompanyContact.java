@@ -61,5 +61,9 @@ public class CompanyContact extends Contact {
 		contact.printInfo();
 
 	}
+@Override
+	public void showData() {
+
+	}
 
 }

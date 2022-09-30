@@ -13,11 +13,11 @@ public class Contact {
 	 */
 
 	// 변수 선언 : 캡슐화 처리 private
-	private String name; // 친구의 이름 (나중에 변수 옆에 주석달기)
-	private String phoneNumber; // 전화번호
-	private String email; // 이메일
-	private String address; // 주소
-	private String birthday; // 생일
+	private String name;
+	private String phoneNumber;
+	private String email;
+	private String address;
+	private String birthday;
 	private String group;
 
 	// 생성자는 위에 넣어야 나중에 헷갈리지 않음

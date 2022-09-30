@@ -4,20 +4,8 @@ import java.util.Scanner;
 
 public class SmartPhone {
 
-	// 기능 클래스 : 속성을 가지지 않고 메소드들로만 정의된 클래스
-	// 여러개의 인스턴스가 생성될 필요 없다. => 싱글톤 패턴
-	// 1.private 생성자
-	// 2. 클래스 내부에서 인스턴스를 생성 static private // 여기서 변수선언하면 안되니까 static 넣었음 ? 이해되었음?
-	// 3. 내부에서 생성한 참조값을 반환해주는 메소드 static public (누구나 쓸 수 있게)
-
-	// 요구 사항
-	// 이 클래스는 연락처 정보를 관리하는 클래스
-	// (1) contact 클래스의 인스턴스 10개를 저장할 수 있는 배열 정의
-	// => 10개 정보를 저장할 수 있다 => 배열 인스턴스를 생성 Contact[ ]
-	// Contact 클래스 기반의 인스턴스를 최대 10까지 만들어서 배열에 참조값을 저장
-
 	private Contact[] contacts;
-	private int numOfContact;	// 입력된 정보의 개수, 배열의 index 값으로 사용
+	private int numOfContact;	
 	Scanner sc;
 	
 	private SmartPhone(int size){
@@ -36,27 +24,14 @@ public class SmartPhone {
 	}
 
 	
-	
-	// ② 기능
-	//   배열에 인스턴스를 저장하고, 
-	//                 수정하고 ( 이름 으로 검색 ), 
-	//                 삭제 ( 이름 으로 검색 ), 
-	//                 검색 후 결과 출력 ( 이름 으로 검색 ),
-	//                 저장된 데이터의 리스트를 출력하는 메소드를 정의합니다.
-	
-	
-	// 이름 검색후 데이터 수정
 	void editContact() {
-		
-		// 검색어 받기
+	
 		System.out.println("데이터 수정이 진행됩니다.");
 		System.out.print("수정하고자 하는 이름을 입력해주세요 >");
 		String name = sc.nextLine();
 		
-		// 삭제하고자 하는 index 찾아야한다! -> 시프트 
-		int searchIndex = -1;	// 현재 검색의 결과는 없다!
+		int searchIndex = -1;	
 		
-		// 데이터 찾기
 		for(int i=0; i<numOfContact; i++) {
 			if(contacts[i].getName().equals(name)) {
 				searchIndex = i;
@@ -78,8 +53,7 @@ public class SmartPhone {
 				+ "변경하지않으려면 엔터를치세요 >");
 		String newName = sc.nextLine();
 		
-		// "  abc  " -> "abc"
-		// " "
+		
 		if(newName != null && newName.trim().length()>0) {
 			contact.setName(newName);
 		}

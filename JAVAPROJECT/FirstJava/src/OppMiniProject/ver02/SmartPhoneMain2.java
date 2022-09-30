@@ -2,17 +2,17 @@ package OppMiniProject.ver02;
 
 public class SmartPhoneMain2 {
 
-public static void main(String[] args) {
-		
+	public static void main(String[] args) {
+
 		SmartPhone sp = SmartPhone.getInstance();
-		
-		while(true) {
-			
+
+		while (true) {
+
 			printMenu();
-			
+
 			int select = Integer.parseInt(sp.sc.nextLine());
-			
-			switch(select) {
+
+			switch (select) {
 			case 1:
 				sp.insertContact();
 				break;
@@ -33,12 +33,9 @@ public static void main(String[] args) {
 				return;
 			}
 		}
-		
-		
-		
-		
+
 	}
-	
+
 	static void printMenu() {
 		System.out.println("==========================");
 		System.out.println("# 전화번호부");
@@ -53,6 +50,3 @@ public static void main(String[] args) {
 	}
 
 }
-	
-	
-

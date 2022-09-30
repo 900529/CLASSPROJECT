@@ -8,6 +8,8 @@ public interface Phone {
 	int NUM = 10;  // public static final int NUM = 10;
 	
 	void print();      // public abstract 생략 
+
+	void call();
 	
 	
 }

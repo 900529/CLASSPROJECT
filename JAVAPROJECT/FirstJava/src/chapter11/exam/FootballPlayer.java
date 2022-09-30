@@ -1,24 +1,19 @@
 package chapter11.exam;
 
-import java.util.Objects;
-
-public class FootballPlayer  {
-
+public class FootballPlayer implements Comparable<FootballPlayer> {
 	private String name;
 	private int number;
 	private String team;
 	private int age;
-	
-	public FootballPlayer(String name, int number, String team, int age) { //초기화 생성자 
 
+	public FootballPlayer(String name, int number, String team, int age) {
 		this.name = name;
 		this.number = number;
 		this.team = team;
 		this.age = age;
 	}
-	
+
 	public FootballPlayer() {
-	// 기본생성자, 디폴트 생성자를 해야되는 이유 확인 => 기본생성자 다음에는 게터세터 
 	}
 
 	public String getName() {
@@ -52,37 +47,44 @@ public class FootballPlayer  {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	
-	
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(age, name, number, team);
+		return age;
+
 	}
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		FootballPlayer other = (FootballPlayer) obj;
-		return age == other.age && Objects.equals(name, other.name) && number == other.number
-				&& Objects.equals(team, other.team);
+		boolean result = false;
+		if (obj != null && obj instanceof FootballPlayer) {
+
+			FootballPlayer player = (FootballPlayer) obj;
+			result = team.equals(player.getTeam()) && name.equals(player.getName()) && age == player.getAge();
+
+		}
+		return result;
 	}
 
-	@Override //투스트링~ 
+	public int compareTo(FootballPlayer o) {
+		int result = team.compareTo(o.getTeam());
+		if (result == 0) {
+			result = name.compareTo(o.getName());
+			if (result == 0) {
+				result = number - o.getNumber();
+			}
+		}
+		return result * -1;
+	}
+
+	@Override // 투스트링~
 	public String toString() {
 		return "FootballPlayer [name=" + name + ", number=" + number + ", team=" + team + ", age=" + age + "]";
 	}
-	
-	// 현재 클래스의 기능 테스트 용도 
+
+	// 현재 클래스의 기능 테스트 용도
 	public static void main(String[] args) {
-		
+
 	}
-	
-	
-	
+
 }

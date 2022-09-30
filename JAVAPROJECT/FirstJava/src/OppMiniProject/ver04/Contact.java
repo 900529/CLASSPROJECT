@@ -105,4 +105,9 @@ class Contact {
 
 	}
 
+	public void showData() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

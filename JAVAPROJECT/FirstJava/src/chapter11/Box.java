@@ -2,21 +2,20 @@ package chapter11;
 
 public class Box {
 
-// void push (Orange o) {
-//	o.print();
-// }
-
-	
-	
-	void push (Object o) {
-		System.out.println();
+	void push(Orange o) {
+		o.print();
 	}
 
-public static void main(String[] args) {
-	Box box = new Box();
-	box.push(new Orange());
-	box.push(new Apple());
-	box.push(new String("Apple"));
+	void push(Apple a) {
+		a.print();
+	}
+
+	public static void main(String[] args) {
+		Box box = new Box();
+		box.push(new Orange());
+		box.push(new Apple());
+		// box.push(new String("Apple"));
+	}
 }
 
 class Apple {
@@ -29,5 +28,4 @@ class Orange {
 	void print() {
 		System.out.println("Orange");
 	}
-}
 }

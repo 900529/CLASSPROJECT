@@ -330,7 +330,7 @@ public class SmartPhone {
 		System.out.println("입력을 시작합니다.");
 		
 		System.out.print("이름 > ");
-		name = sc.nextLine();
+		name = getString();
 		
 		System.out.print("전화번호 >");
 		phoneNumber = sc.nextLine();
@@ -396,13 +396,27 @@ public class SmartPhone {
 		
 	}
 	
+	// Scanner 를 통해서 사용자에게 문자열을 받아서 반환하는 메소드
+	// 입력 문자가 공백일 경우 다시 입력하도록 하는 기능
+	private String getString() {
+		String str = null;
+		
+		while(true) { 
+			
+			str = sc.nextLine();
+			if(str!=null && str.trim().length()!=0) {
+				break;
+			} else {
+				System.out.println("공백은 허용하지않습니다. 정상적인 문자를 입력하세요. ");
+			}
+		}
+		
+		return str;
+		
 	
+	}
 	
-	
-	
-	
-	
-	
+
 	
 
 }
