@@ -1,4 +1,4 @@
-package OppMiniProject.ver01;
+package ver02;
 
 public class Contact {
 
@@ -96,15 +96,17 @@ public class Contact {
 		System.out.println("그룹 : " + this.group);
 
 	}
-    //toString 왜 하는지 
+
+	// toString 왜 하는지
 	@Override
 	public String toString() {
 		return "Contact [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
 				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
 
-	
+	public static void main(String[] args) {
+		Contact contact = new Contact();
 
-	
-	
+	}
+
 }
