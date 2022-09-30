@@ -1,6 +1,6 @@
-package ver02;
+package OppMiniProject.ver03;
 
-public class Contact {
+class Contact {
 
 	/*
 	 * 데이터 저장하고, 출력하는 메소드를 가지는 클래스 정의 추가 요청 사항 : 변수들은 직접 참조를 막아 캡슐화 처리 => private
@@ -13,20 +13,17 @@ public class Contact {
 	 */
 
 	// 변수 선언 : 캡슐화 처리 private
-	private String name; // 친구의 이름 (나중에 변수 옆에 주석달기)
+	private String name; // 친구의 이름
 	private String phoneNumber; // 전화번호
 	private String email; // 이메일
 	private String address; // 주소
 	private String birthday; // 생일
-	private String group;
-
-	// 생성자는 위에 넣어야 나중에 헷갈리지 않음
+	private String group; // 그룹
 
 	public Contact() {
-		// super();
-
 	}
 
+	// 인스턴스 생성과 함께 데이터를 초기화 할 수 있도록 생성자를 정의해봅시다.
 	public Contact(String name, String phoneNumber, String email, String address, String birthday, String group) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
@@ -36,7 +33,6 @@ public class Contact {
 		this.group = group;
 	}
 
-	// getter setter
 	public String getName() {
 		return name;
 	}
@@ -86,18 +82,17 @@ public class Contact {
 	}
 
 	// 위 데이터를 출력하는 기능
-	public void printInfo() { // showInfo 주로 많이 사용
-		System.out.println("친구 정보==========");
+
+	public void printInfo() {
+		System.out.println("친구정보 ==============");
 		System.out.println("이름 : " + this.name);
 		System.out.println("전화번호 : " + this.phoneNumber);
 		System.out.println("이메일 : " + this.email);
 		System.out.println("주소 : " + this.address);
 		System.out.println("생일 : " + this.birthday);
 		System.out.println("그룹 : " + this.group);
-
 	}
 
-	// toString 왜 하는지
 	@Override
 	public String toString() {
 		return "Contact [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
@@ -105,6 +100,7 @@ public class Contact {
 	}
 
 	public static void main(String[] args) {
+
 		Contact contact = new Contact();
 
 	}

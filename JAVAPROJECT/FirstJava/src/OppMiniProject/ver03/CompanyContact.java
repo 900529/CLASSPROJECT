@@ -1,4 +1,4 @@
-package ver03;
+package OppMiniProject.ver03;
 
 public class CompanyContact extends Contact {
 
@@ -25,15 +25,38 @@ public class CompanyContact extends Contact {
 	@Override
 	public void printInfo() {
 		super.printInfo();
-		System.out.println("회사 이름 : " + this.company);
-		System.out.println("부서 이름 : " + this.division);
+		System.out.println("회사이름 : " + this.company);
+		System.out.println("부서이름 : " + this.division);
 		System.out.println("직급 : " + this.manager);
 	}
 
-	public static void main(String[] args) {
+	public String getCompany() {
+		return company;
+	}
 
-		Contact contact = new CompanyContact("yena", "010-2323-8989", "yena@naver.com", "Seoul", "1990-05-29", "직장동료",
-				"구글", "선수", "부장");
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getDivision() {
+		return division;
+	}
+
+	public void setDivision(String division) {
+		this.division = division;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
+	}
+
+	public static void main(String[] args) {
+		Contact contact = new CompanyContact("Son", "010-2323-5656", "son@gmail", "london", "2000-10-12", "직장동료", "토트넘",
+				"선수", "없음");
 
 		contact.printInfo();
 

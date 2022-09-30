@@ -1,4 +1,4 @@
-package ver01;
+package OppMiniProject.ver01;
 
 public class Contact {
 

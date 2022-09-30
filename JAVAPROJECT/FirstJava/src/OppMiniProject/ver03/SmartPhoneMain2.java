@@ -1,8 +1,8 @@
-package ver03;
+package OppMiniProject.ver03;
 
 public class SmartPhoneMain2 {
 
-public static void main(String[] args) {
+	public static void main(String[] args) {
 		
 		SmartPhone sp = SmartPhone.getInstance();
 		
@@ -15,7 +15,7 @@ public static void main(String[] args) {
 			switch(select) {
 			case 1:
 				sp.insertContact();
-				break;
+				break; 
 			case 2:
 				sp.searchInfoPrint();
 				break;
@@ -53,6 +53,3 @@ public static void main(String[] args) {
 	}
 
 }
-	
-	
-

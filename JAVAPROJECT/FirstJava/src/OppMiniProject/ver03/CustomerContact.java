@@ -1,4 +1,4 @@
-package ver03;
+package OppMiniProject.ver03;
 
 public class CustomerContact extends Contact {
 
@@ -14,11 +14,35 @@ public class CustomerContact extends Contact {
 		this.manager = manager;
 	}
 
+	public String getCompany() {
+		return company;
+	}
+
+	public void setCompany(String company) {
+		this.company = company;
+	}
+
+	public String getProduct() {
+		return product;
+	}
+
+	public void setProduct(String product) {
+		this.product = product;
+	}
+
+	public String getManager() {
+		return manager;
+	}
+
+	public void setManager(String manager) {
+		this.manager = manager;
+	}
+
 	@Override
 	public void printInfo() {
 		super.printInfo();
-		System.out.println("거래처 이름 :  " + this.company);
-		System.out.println("거래 품목 :  " + this.product);
+		System.out.println("거래처 이름 : " + this.company);
+		System.out.println("거래 품목 : " + this.product);
 		System.out.println("담당자 : " + this.manager);
 	}
 

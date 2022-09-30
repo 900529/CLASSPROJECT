@@ -1,4 +1,4 @@
-package ver02;
+package OppMiniProject.ver02;
 
 public class SmartPhoneMain2 {
 

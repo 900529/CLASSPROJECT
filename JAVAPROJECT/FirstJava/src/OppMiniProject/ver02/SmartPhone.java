@@ -1,4 +1,4 @@
-package ver03;
+package OppMiniProject.ver02;
 
 import java.util.Scanner;
 
