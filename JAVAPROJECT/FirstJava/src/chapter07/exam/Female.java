@@ -14,7 +14,7 @@ public class Female extends Person {
 	String major;
 	int grade;
 
-	// 단축키는 문법적으로 이해한 뒤에 사용하기~
+	// 생성자
 	public Female(String name, String personNumber, String major, int grade) {
 		super(name, personNumber);
 		this.major = major;

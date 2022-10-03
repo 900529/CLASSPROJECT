@@ -16,7 +16,7 @@ public class Person {
 	String name;
 	String personNumber;
 
-	// (2) 생성자 구성 : 필드를 이용하는 생성사 Generate Constructor using fields
+	// (2) 생성자 구성 : 필드를 이용하는 생성자 Generate Constructor using fields
 	public Person(String name, String personNumber) {
 		this.name = name;
 		this.personNumber = personNumber;
