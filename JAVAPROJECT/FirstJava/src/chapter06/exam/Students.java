@@ -2,11 +2,14 @@ package chapter06.exam;
 
 public class Students {
 
+	// 학생이름, 국어점수, 영어점수, 수학점수 저장하는 변수 정의
 	private String name;
 	private int korScore;
 	private int engScore;
 	private int matScore;
 
+	
+	// 생성자
 	public Students(String name, int korScore, int engScore, int matScore) {
 		this.name = name;
 		this.korScore = korScore;
@@ -14,6 +17,7 @@ public class Students {
 		this.matScore = matScore;
 	}
 
+	// 게터세터~
 	public String getName() {
 		return name;
 	}
