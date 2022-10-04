@@ -1,4 +1,4 @@
-package OppMiniProject.ver02;
+package OppMiniProject.ver03;
 
 class Contact { // 패키지 안에서만 사용
 

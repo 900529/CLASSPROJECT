@@ -1,4 +1,4 @@
-package OppMiniProject.ver02;
+package OppMiniProject.ver03;
 
 public class SmartPhoneMain2 {
 
@@ -52,7 +52,7 @@ public class SmartPhoneMain2 {
 
 /* 전화번호부
  * 클래스 3개  
- * (1) 정보를 저장하는 용도 클래스 : 인스턴스 마다 각각 다른 속성을 가진다. 
- * (2) 기능을 처리하는 클래스 : 기능만 정의 => 하나의 인스턴스만 생성 사용 
- * (3) 프로그램을 정의하는 클래스 
+  (1) 정보를 저장하는 용도 클래스 : 인스턴스 마다 각각 다른 속성을 가진다. 
+  (2) 기능을 처리하는 클래스 : 기능만 정의 => 하나의 인스턴스만 생성 사용 
+  (3) 프로그램을 정의하는 클래스 
  */

@@ -1,4 +1,4 @@
-package OppMiniProject.ver02;
+package OppMiniProject.ver03;
 
 import java.util.Scanner;
 
@@ -201,6 +201,13 @@ public class SmartPhone {
 		// 2. 인스턴스 생성
 		// 3. 배열에 인스턴스 참조값을 저장
 
+		// *** (추가) 회사 친구 입력?
+		// 거래처 정보 입력
+
+		System.out.println("입력하고자 하는 친구 타입을 선택해주세요.");
+		System.out.println("1. 회사 동료 \t 2. 거래처");
+		int select = Integer.parseInt(sc.nextLine());
+
 		if (numOfContact == contacts.length) {
 			System.out.println("최대 저장 개수는 + contact + 개 입니다.");
 			return;
@@ -233,8 +240,37 @@ public class SmartPhone {
 		System.out.print("그룹 > ");
 		group = sc.nextLine();
 
-		// 2. 인스턴스 생성
-		Contact contact = new Contact(name, phoneNumber, email, address, birthday, group);
+		Contact contact = null;
+
+		// *** (추가) 여기서 분기가 되어야함! 1. 회사 2. 거래처 3. 직급
+		if (select == 1) {
+			// CompanyContact 인스턴스 생성
+			System.out.println("회사이름 >> ");
+			String company = sc.nextLine();
+			System.out.println("부서이름 >> ");
+			String division = sc.nextLine();
+			System.out.println("직급 >> ");
+			String manager = sc.nextLine();
+
+			// 인스턴스 생성
+			contact = new CompanyContact(name, phoneNumber, email, address, birthday, group, company, division,
+					manager);
+
+		} else {
+			// CustomerContact 인스턴스 생성
+
+			System.out.println("거래처 이름 >> ");
+			String company = sc.nextLine();
+			System.out.println("거래 품목 >> ");
+			String product = sc.nextLine();
+			System.out.println("담당자 >> ");
+			String manager = sc.nextLine();
+
+			// 2. 인스턴스 생성
+			contact = new CustomerContact(name, phoneNumber, email, address, birthday, group, company, product,
+					manager);
+
+		}
 
 		// 배열에 저장
 		// 처음 입력 : numOfContact => 0
