@@ -25,15 +25,16 @@ public class ArrayListTest {
 
 		// 일괄 참조
 		printAll(list);
-		
+
 		// 특정위치에 요소 추가 (자주 사용되지는 않음)
-		list.add(1, "안정환"); // 두번째로 들어감~ 
+		list.add(1, "안정환"); // 두번째로 들어감~
 		printAll(list);
-		
+
 		// 요소 삭제
 		list.remove(1);
 		printAll(list);
-		
+		System.out.println(list.get(1));
+
 	}
 
 	static void printAll(List<String> list) {
