@@ -2,11 +2,13 @@ package chapter06.exam;
 
 public class Students {
 
+	// 학생이름, 국어점수, 영어점수, 수학점수 저장하는 변수 정의
 	private String name;
 	private int korScore;
 	private int engScore;
 	private int matScore;
 
+	// 생성자
 	public Students(String name, int korScore, int engScore, int matScore) {
 		this.name = name;
 		this.korScore = korScore;
@@ -14,6 +16,7 @@ public class Students {
 		this.matScore = matScore;
 	}
 
+	// 게터세터~
 	public String getName() {
 		return name;
 	}
@@ -48,15 +51,14 @@ public class Students {
 
 	// 총점을 구해서 반환하는 메소드
 	public int sum() {
-		int result = 0;
-
+		int result = 0; // 오류 방지를 위해서 디폴트값, 리턴 작성하는걸로!
 		result = korScore + engScore + matScore;
 		return result;
 	}
 
 	// 평균값 구해서 반환하는 메소드
 	public float avg() {
-		return sum() / 3f;
+		return sum() / 3f; // 그냥 3만 하게 되면 int 연산이 되버리기 때문에 f붙인다.
 	}
 
 	// 행단위 출력
@@ -66,6 +68,7 @@ public class Students {
 
 	}
 
+	// 테스트
 	public static void main(String[] args) {
 		Students s = new Students("학생1", 100, 90, 80);
 

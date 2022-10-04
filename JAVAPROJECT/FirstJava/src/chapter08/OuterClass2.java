@@ -29,9 +29,10 @@ public class OuterClass2 {
 
 	public static void main(String[] args) {
 		OuterClass o = new OuterClass("KING");
-		BasicClass localClassInst =   o.createLocalClassInstance();
+		BasicClass localClassInst = o.createLocalClassInstance();
 		localClassInst.tell();
-
+		
+		
 	}
 }
 

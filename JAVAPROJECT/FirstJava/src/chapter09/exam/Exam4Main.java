@@ -7,10 +7,10 @@ public class Exam4Main {
 
 	public static void main(String[] args) {
 
-		LocalDate birthDay = LocalDate.of(1999, 10, 10);
+		LocalDate birthDay = LocalDate.of(1989, 06, 27); // of 붙이면 특정날짜로
 		LocalDate now = LocalDate.now();
 
-		long days = ChronoUnit.MONTHS.between(birthDay, now);
+		long days = ChronoUnit.DAYS.between(birthDay, now);
 		System.out.println(days);
 
 		LocalDate cDay = LocalDate.of(2022, 12, 25);

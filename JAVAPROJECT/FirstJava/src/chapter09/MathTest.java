@@ -4,14 +4,15 @@ public class MathTest {
 
 	public static void main(String[] args) {
 
-		// PI 상수
+		
+		// PI 상수 
 		System.out.println(Math.PI);
 
 		// 난수 생성
 		System.out.println(Math.random());
 		
-		// 1~45
-		int num = (int) (Math.random() * 45) + 1; // 0~44
+		// 1~45까지의 난수 int로 형변환 
+		int num = (int) (Math.random() * 45) + 1; // 0~44.999999 절삭하고 +1
 		System.out.println(num);
 
 		// 절사

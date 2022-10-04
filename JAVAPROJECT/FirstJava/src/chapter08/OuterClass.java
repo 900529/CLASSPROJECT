@@ -46,4 +46,9 @@ public class OuterClass extends Object {
 		OuterClass.InnerClass in5 = out1.new InnerClass();
 	}
 
+	public BasicClass createLocalClassInstance() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

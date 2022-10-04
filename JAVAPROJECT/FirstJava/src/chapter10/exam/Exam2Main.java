@@ -12,9 +12,9 @@ public class Exam2Main {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.println("숫자를 입력하세요 >> ");
+		System.out.println("숫자를 입력하세요. >> "); // 0~9
 
-		int num = 0; // 뒤에 있던 내용 앞으로
+		int num = 0; // try 밖에서 변수 초기화 해주고,
 
 		try {
 			num = sc.nextInt(); // 예외처리 포인트 // int num 이였지만, 앞에 넘어가면서 int 생략
@@ -24,7 +24,7 @@ public class Exam2Main {
 			System.out.println("정상적인 숫자를 입력해주세요.");
 		}
 
-		// System.out.println("num = " + num); 앞으로 올라감! 정상적인 범위일때 출력할 수 있도록
+		System.out.println("num = " + num); // int num 앞으로 써줘야함! 정상적인 범위일때 출력할 수 있도록
 
 	}
 

@@ -1,6 +1,6 @@
 package OppMiniProject.ver02;
 
-public class Contact {
+class Contact { // 패키지 안에서만 사용
 
 	/*
 	 * 데이터 저장하고, 출력하는 메소드를 가지는 클래스 정의 추가 요청 사항 : 변수들은 직접 참조를 막아 캡슐화 처리 => private
@@ -12,7 +12,7 @@ public class Contact {
 	 * 출력 메소드를 호출 인스턴스의 각 변수에 값을 바꾸는 메소드를 이용해서 데이터 수정 인스턴스의 출력메소드 재실행
 	 */
 
-	// 변수 선언 : 캡슐화 처리 private
+	// 변수 선언 
 	private String name;
 	private String phoneNumber;
 	private String email;
@@ -97,7 +97,6 @@ public class Contact {
 
 	}
 
-	// toString 왜 하는지
 	@Override
 	public String toString() {
 		return "Contact [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
