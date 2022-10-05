@@ -14,14 +14,14 @@ public class HashSetTest {
 		set.add("이강인");
 		set.add("박지성");
 		set.add("이강인");
-		set.add("손흥민");
+		set.add("손흥민");  // set은 같은 내용 중복 저장하지 않는다. 
 
 		System.out.println("저장된 요소의 개수 : " + set.size());
 
 		Iterator<String> itr = set.iterator();
 
 		while (itr.hasNext()) {
-			System.out.println(itr.next());
+			System.out.println(itr.next()); // 순서 다르게
 		}
 
 	}

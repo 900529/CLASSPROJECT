@@ -1,6 +1,7 @@
 package chapter11;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class IteratorTest {
@@ -16,7 +17,14 @@ public class IteratorTest {
 		list.add(50);
 		list.add(50);
 
-		printAll(list);
+		// Iterator를 이용한 일괄 처리
+		Iterator<Integer> itr = list.iterator();
+
+		while (itr.hasNext()) {
+			Integer integer = itr.next();
+			// itr.next();
+			System.out.println(integer);
+		}
 
 	}
 
