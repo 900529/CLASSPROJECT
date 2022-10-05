@@ -4,18 +4,6 @@ import java.util.Scanner;
 
 public class SmartPhone {
 
-	// 기능 클래스 : 속성을 가지지 않고 메소드들로만 정의된 클래스
-	// 여러개의 인스턴스가 생성될 필요 없다! => 싱글톤 패턴
-	// 1. private 생성자
-	// 2. 클래스 내부에서 인스턴스를 생성 static private
-	// 3. 내부에서 생성한 참조값을 반환 해주는 메소드 static public
-
-	// 요구사항
-	// 이 클래스는 연락처 정보를 관리하는 클래스입니다.
-	// ① Contact 클래스의 인스턴스 10개를 저장 할 수 있는 배열을 정의합시다.
-	// => 10개 정보를 저장할수 있다. -> 배열 인스턴스를 생성 Contact[]
-	// Contact 클래스 기반의 인스턴스를 최대 10개까지 만들어서 배열에 참조값을 저장
-
 	private Contact[] contacts; // null 변수선언할때 초기화하기보다는 생성자할때
 	private int numOfContact; // 저장된 공간이 열개 있지만, 입력된 정보의 개수, 배열의 index 값으로 사용
 	Scanner sc;
@@ -108,6 +96,68 @@ public class SmartPhone {
 			contact.setGroup(newGroup);
 		}
 
+		
+if(contact instanceof CompanyContact) {
+			
+			CompanyContact companyContact = (CompanyContact) contact;
+			
+			System.out.println(
+					"변경하고자하는 회사이름을 입력해주세요.(현재값: "+companyContact.getCompany()+")\n" 
+					+ "변경하지않으려면 엔터를치세요 >");
+			String company = sc.nextLine();
+			if(company!=null && company.trim().length()>0) {
+				companyContact.setCompany(company);
+			}
+
+			System.out.println(
+					"변경하고자하는 부서이름을 입력해주세요.(현재값: "+companyContact.getDivision()+")\n" 
+					+ "변경하지않으려면 엔터를치세요 >");
+			String division = sc.nextLine();
+			if(division!=null && division.trim().length()>0) {
+				companyContact.setDivision(division);
+			}
+
+			System.out.println(
+					"변경하고자하는 직급을 입력해주세요.(현재값: "+companyContact.getManager()+")\n" 
+					+ "변경하지않으려면 엔터를치세요 >");
+			String manager = sc.nextLine();
+			if(manager!=null && manager.trim().length()>0) {
+				companyContact.setManager(manager);
+			}
+			
+			
+		} else if(contact instanceof CustomerContact) {
+			
+			CustomerContact customerContact = (CustomerContact) contact;
+			
+			System.out.println(
+					"변경하고자하는 거래처 이름을 입력해주세요.(현재값: "+customerContact.getCompany()+")\n" 
+					+ "변경하지않으려면 엔터를치세요 >");
+			String company = sc.nextLine();
+			if(company!=null && company.trim().length()>0) {
+				customerContact.setCompany(company);
+			}
+			
+			System.out.println(
+					"변경하고자하는 거래품목을 입력해주세요.(현재값: "+customerContact.getProduct()+")\n" 
+					+ "변경하지않으려면 엔터를치세요 >");
+			String product = sc.nextLine();
+			if(product!=null && product.trim().length()>0) {
+				customerContact.setProduct(product);
+			}
+			
+			System.out.println(
+					"변경하고자하는 담당자 이름을 입력해주세요.(현재값: "+customerContact.getManager()+")\n" 
+					+ "변경하지않으려면 엔터를치세요 >");
+			String manager = sc.nextLine();
+			if(manager!=null && manager.trim().length()>0) {
+				customerContact.setManager(manager);
+			}
+			
+		} 
+		
+		
+		
 		System.out.println("정보가 수정되었습니다.");
 		System.out.println();
 
@@ -147,9 +197,6 @@ public class SmartPhone {
 
 	// 검색 후 결과 출력 (이름으로 검색)
 	void searchInfoPrint() {
-		// 1. 사용자에게 검색할 키워드 입력받는다.
-		// 2. 배열에서 이름 검색
-		// 3. 결과 출력 : "검색한 이름의 정보가 없습니다"
 
 		String name = null; // 검색할 이름
 
@@ -195,14 +242,6 @@ public class SmartPhone {
 
 	// 친구 정보 입력
 	void insertContact() {
-
-		// 배열에 인스턴스를 저장하고,
-		// 1. 데이터 받고
-		// 2. 인스턴스 생성
-		// 3. 배열에 인스턴스 참조값을 저장
-
-		// *** (추가) 회사 친구 입력?
-		// 거래처 정보 입력
 
 		System.out.println("입력하고자 하는 친구 타입을 선택해주세요.");
 		System.out.println("1. 회사 동료 \t 2. 거래처");

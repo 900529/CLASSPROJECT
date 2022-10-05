@@ -1,13 +1,11 @@
-package OppMiniProject.ver03;
+package OppMiniProject.ver05;
 
+// *** Add unimplemented methods
 public class CompanyContact extends Contact {
 
 	private String company;
 	private String division;
 	private String manager;
-
-	// Generate Constructor using Fields 에서 Contact(String, String ~~ ) 선택
-	// 상위클래스에서 정의해야되는 super 까지 정리
 
 	public CompanyContact(String name, String phoneNumber, String email, String address, String birthday, String group,
 			String company, String division, String manager) {
@@ -19,7 +17,6 @@ public class CompanyContact extends Contact {
 		this.manager = manager;
 	}
 
-	// Contact 클래스에서 printInfo 외 새롭게 추가된 정보까지 출력될 수 있도록!
 	@Override
 	public void printInfo() {
 		super.printInfo();
@@ -27,7 +24,7 @@ public class CompanyContact extends Contact {
 		System.out.println("부서이름 : " + this.division);
 		System.out.println("직급 : " + this.manager);
 	}
-	
+
 	public String getCompany() {
 		return company;
 	}
@@ -52,14 +49,18 @@ public class CompanyContact extends Contact {
 		this.manager = manager;
 	}
 
-
-
 	public static void main(String[] args) {
-		Contact contact = new CompanyContact("Yena", "010-7427-0529", "yena@naver.com", "Seoul", "1990-05-29", "직장동료",
-				"구글", "개발", "없음");
+		Contact contact = new CompanyContact("Son", "010-2323-5656", "son@gmail", "london", "2000-10-12", "직장동료", "토트넘",
+				"선수", "없음");
 
-		// 메소드 호출
 		contact.printInfo();
 
 	}
+
+	@Override
+	public void showData() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

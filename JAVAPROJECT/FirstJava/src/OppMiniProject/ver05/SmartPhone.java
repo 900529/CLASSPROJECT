@@ -1,4 +1,4 @@
-package OppMiniProject.ver04;
+package OppMiniProject.ver05;
 
 import java.util.Scanner;
 
@@ -23,16 +23,13 @@ public class SmartPhone {
 		return sp;
 	}
 
-	// 이름 검색후 데이터 수정
-	void editContact() {
+	// *** 이름을 입력받고 배열에 해당 이름을 Contact 객체가 있는 index 반환
+	private int getIndex() {
 
-		// 검색어 받기
-		System.out.println("데이터 수정이 진행됩니다.");
-		System.out.println("수정하고자 하는 이름을 입력하시오");
 		String name = sc.nextLine();
 
-		// 삭제하고자 하는 index 찾아야한다 -> 시프트
-		int searchIndex = -1;
+		// 이름 검색 하는 index 찾아야한다
+		int searchIndex = -1; // 찾지 못하면 -1
 
 		// 데이터 찾기
 		for (int i = 0; i < numOfContact; i++) {
@@ -41,6 +38,18 @@ public class SmartPhone {
 				break;
 			}
 		}
+		return searchIndex;
+
+	}
+
+	// 이름 검색후 데이터 수정
+	void editContact() {
+
+		// 검색어 받기
+		System.out.println("데이터 수정이 진행됩니다.");
+		System.out.println("수정하고자 하는 이름을 입력하시오");
+
+		int searchIndex = getIndex(); // *** 메소드호출로 초기화
 
 		if (searchIndex < 0) {
 			System.out.println("찾으시는 데이터가 존재하지 않습니다.");
@@ -149,18 +158,9 @@ public class SmartPhone {
 		// 검색어 받기
 		System.out.println("데이터 삭제가 진행됩니다.");
 		System.out.println("삭제하고자 하는 이름을 입력하시오");
-		String name = sc.nextLine();
 
-		// 삭제하고자 하는 index 찾아야한다 -> 시프트
-		int searchIndex = -1;
+		int searchIndex = getIndex();
 
-		// 데이터 찾기
-		for (int i = 0; i < numOfContact; i++) {
-			if (contacts[i].getName().equals(name)) {
-				searchIndex = i;
-				break;
-			}
-		}
 // 검색한 index 값으로 분기 : 시프트를 하거나 검색 결과 이름이 존재하지 않는다. 
 		if (searchIndex < 0) {
 			System.out.println("삭제하고자 하는 이름의 데이터가 존재하지 않습니다. ");
@@ -182,25 +182,15 @@ public class SmartPhone {
 
 		System.out.println("검색을 시작합니다.");
 		System.out.println("검색할 이름을 입력하세요. >");
-		name = sc.nextLine();
 
-		Contact contact = null;
-
-		// 배열에서 검색할 이름을 가지는 인스턴스의 데이터 출력 메소드를 실행
-		for (int i = 0; i < numOfContact; i++) {
-			// 각 요소의 참조변수를 객체로 참조해서 이름 비교
-			if (contacts[i].getName().equals(name)) {
-				contact = contacts[i];
-				break;
-			}
-		}
+		int searchIndex = getIndex();
 
 		// 3. 결과출력 : "검색한 이름의 정보가 없습니다"
 		System.out.println("검색의 결과==============");
-		if (contact == null) {
+		if (searchIndex < 0) {
 			System.out.println("검색한 이름" + name + "정보가 없습니다.");
 		} else {
-			contact.printInfo();
+			contacts[searchIndex].printInfo();
 		}
 	}
 
@@ -240,23 +230,24 @@ public class SmartPhone {
 
 		// 1. 데이터 받고
 		System.out.println("입력을 시작합니다.");
+
 		System.out.print("이름 > ");
-		name = sc.nextLine();
+		name = getName();
 
 		System.out.print("번호 > ");
-		phoneNumber = sc.nextLine();
+		phoneNumber = getString();
 
 		System.out.print("이메일 > ");
-		email = sc.nextLine();
+		email = getString();
 
 		System.out.print("주소 > ");
-		address = sc.nextLine();
+		address = getString();
 
 		System.out.print("생일 > ");
-		birthday = sc.nextLine();
+		birthday = getString();
 
 		System.out.print("그룹 > ");
-		group = sc.nextLine();
+		group = getString();
 
 		Contact contact = null;
 
@@ -264,11 +255,11 @@ public class SmartPhone {
 		if (select == 1) {
 			// CompanyContact 인스턴스 생성
 			System.out.println("회사이름 >> ");
-			String company = sc.nextLine();
+			String company = getString();
 			System.out.println("부서이름 >> ");
-			String division = sc.nextLine();
+			String division = getString();
 			System.out.println("직급 >> ");
-			String manager = sc.nextLine();
+			String manager = getString();
 
 			contact = new CompanyContact(name, phoneNumber, email, address, birthday, group, company, division,
 					manager);
@@ -276,11 +267,11 @@ public class SmartPhone {
 		} else {
 
 			System.out.println("거래처 이름 >> ");
-			String company = sc.nextLine();
+			String company = getString();
 			System.out.println("거래 품목 >> ");
-			String product = sc.nextLine();
+			String product = getString();
 			System.out.println("담당자 >> ");
-			String manager = sc.nextLine();
+			String manager = getString();
 
 			// 2. 인스턴스 생성
 			contact = new CustomerContact(name, phoneNumber, email, address, birthday, group, company, product,
@@ -291,4 +282,96 @@ public class SmartPhone {
 		contacts[numOfContact++] = contact;
 
 	}
+
+	// *** Scanner를 통해서 사용자에게 문자열을 받아서 반환하는 메소드
+	// 입력 문자가 공백일 경우 다시 입력하도록 하는 기능
+	private String getString() {
+
+		String str = null;
+
+		while (true) {
+			str = sc.nextLine();
+
+			if (str != null & str.trim().length() != 0) {
+				break;
+			} else {
+				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
+			}
+
+		}
+
+		return str;
+
+	}
+
+	// 이름 정보 받아서 중복 여부 체크 후 문자열 반환
+	private String getName() {
+		String name = null;
+
+		while (true) {
+			name = sc.nextLine();
+
+			if (name != null & name.trim().length() != 0) {
+				// 배열의 요소에 같은 이름의 요소가 있는지 체크
+				boolean check = false;
+
+				// 이름 검색
+				for (int i = 0; i < numOfContact; i++) {
+					if (name.equals(contacts[i].getName())) {
+						check = true;
+						break;
+					}
+				}
+
+				if (check) {
+					System.out.println("같은 이름의 데이터가 존재합니다 \n 다시 입력하세요! >> .");
+					// continue;
+				} else {
+					break;
+				}
+
+			} else {
+				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
+			}
+
+		}
+		return name;
+
+	}
+
+	// 전화번호를 받아서 중복된 전화번호가 있는지 체크, 중복되지 않는 전화번호 받아서 반환
+	private String getPhoneNumber() {
+		String phoneNumber = null;
+
+		while (true) {
+
+			phoneNumber = sc.nextLine();
+
+			if (phoneNumber != null && phoneNumber.trim().length() > 0) {
+
+				boolean check = false;
+
+				// 중복 여부 체크
+				for (int i = 0; i < numOfContact; i++) {
+					if (phoneNumber.equals(contacts[i].getPhoneNumber())) {
+						check = true;
+						break;
+					}
+
+				}
+
+				if (check) {
+					System.out.println("중복된 전화번호가 존재합니다 \n다시 입력해주세요. >> ");
+				} else {
+					break;
+				}
+
+			} else {
+				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
+			}
+		}
+		return phoneNumber;
+
+	}
+
 }

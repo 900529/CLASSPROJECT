@@ -1,7 +1,6 @@
-package OppMiniProject.ver03;
+package OppMiniProject.ver05;
 
-class Contact { // 패키지 안에서만 사용
-
+abstract class Contact implements ShowData { // *** implements ShowData // abstract 
 
 	// 변수 선언 
 	private String name;
@@ -92,10 +91,6 @@ class Contact { // 패키지 안에서만 사용
 		return "Contact [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
 				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
-
-	public static void main(String[] args) {
-		Contact contact = new Contact();
-
-	}
-
 }
+
+	
