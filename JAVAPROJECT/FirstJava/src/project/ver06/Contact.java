@@ -71,8 +71,7 @@ abstract class Contact implements ShowData { // *** implements ShowData // abstr
 		this.group = group;
 	}
 
-	// 위 데이터를 출력하는 기능
-	public void printInfo() { // showInfo 주로 많이 사용
+	public void printInfo() { 
 		System.out.println("친구 정보==========");
 		System.out.println("이름 : " + this.name);
 		System.out.println("전화번호 : " + this.phoneNumber);

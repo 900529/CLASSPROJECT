@@ -1,6 +1,7 @@
 package project.ver06;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class SmartPhone {
 
@@ -23,12 +24,11 @@ public class SmartPhone {
 		return sp;
 	}
 
-
 	private int getIndex() {
 
 		String name = sc.nextLine();
 
-		int searchIndex = -1; // 찾지 못하면 -1
+		int searchIndex = -1;
 
 		// 데이터 찾기
 		for (int i = 0; i < numOfContact; i++) {
@@ -97,27 +97,27 @@ public class SmartPhone {
 		}
 
 		if (contact instanceof CompanyContact) {
-				CompanyContact companyContact = (CompanyContact) contact;
-				System.out.println(
-						"변경하고자 하는 회사이름을 입력해주세요.(현재값 : " + companyContact.getCompany() + ")\n" + "변경하지않으려면 엔터를 치세요 >");
-				String company = sc.nextLine();
-				if (company != null && company.trim().length() > 0) {
-					companyContact.setCompany(company);
-				}
-				
-				System.out.println(
-					"변경하고자 하는 부서이름을 입력해주세요.(현재값 : " + companyContact.getDivision() + ")\n" + "변경하지않으려면 엔터를 치세요 >");
-				String division = sc.nextLine();
-				if (division != null && division.trim().length() > 0) {
-					companyContact.setDivision(division);
-				}
+			CompanyContact companyContact = (CompanyContact) contact;
+			System.out.println(
+					"변경하고자 하는 회사이름을 입력해주세요.(현재값 : " + companyContact.getCompany() + ")\n" + "변경하지않으려면 엔터를 치세요 >");
+			String company = sc.nextLine();
+			if (company != null && company.trim().length() > 0) {
+				companyContact.setCompany(company);
+			}
 
-				System.out.println(
-						"변경하고자 하는 직급을 입력해주세요.(현재값 : " + companyContact.getManager() + ")\n" + "변경하지않으려면 엔터를 치세요 >");
-				String manager = sc.nextLine();
-				if (manager != null && manager.trim().length() > 0) {
-					companyContact.setManager(manager);
-				}
+			System.out.println(
+					"변경하고자 하는 부서이름을 입력해주세요.(현재값 : " + companyContact.getDivision() + ")\n" + "변경하지않으려면 엔터를 치세요 >");
+			String division = sc.nextLine();
+			if (division != null && division.trim().length() > 0) {
+				companyContact.setDivision(division);
+			}
+
+			System.out.println(
+					"변경하고자 하는 직급을 입력해주세요.(현재값 : " + companyContact.getManager() + ")\n" + "변경하지않으려면 엔터를 치세요 >");
+			String manager = sc.nextLine();
+			if (manager != null && manager.trim().length() > 0) {
+				companyContact.setManager(manager);
+			}
 
 		} else if (contact instanceof CustomerContact) {
 
@@ -125,26 +125,26 @@ public class SmartPhone {
 
 			System.out.println(
 					"변경하고자하는 거래처 이름을 입력해주세요.(현재값: " + customerContact.getCompany() + ")\n" + "변경하지않으려면 엔터를치세요 >");
-				String company = sc.nextLine();
-				if (company != null && company.trim().length() > 0) {
-					customerContact.setCompany(company);
-				}
-
-				System.out.println(
-					"변경하고자하는 거래품목을 입력해주세요.(현재값: " + customerContact.getProduct() + ")\n" + "변경하지않으려면 엔터를치세요 >");
-				String product = sc.nextLine();
-				if (product != null && product.trim().length() > 0) {
-					customerContact.setProduct(product);
-				}
-
-				System.out.println(
-					"변경하고자하는 담당자 이름을 입력해주세요.(현재값: " + customerContact.getManager() + ")\n" + "변경하지않으려면 엔터를치세요 >");
-				String manager = sc.nextLine();
-				if (manager != null && manager.trim().length() > 0) {
-					customerContact.setManager(manager);
-
-				}
+			String company = sc.nextLine();
+			if (company != null && company.trim().length() > 0) {
+				customerContact.setCompany(company);
 			}
+
+			System.out.println(
+					"변경하고자하는 거래품목을 입력해주세요.(현재값: " + customerContact.getProduct() + ")\n" + "변경하지않으려면 엔터를치세요 >");
+			String product = sc.nextLine();
+			if (product != null && product.trim().length() > 0) {
+				customerContact.setProduct(product);
+			}
+
+			System.out.println(
+					"변경하고자하는 담당자 이름을 입력해주세요.(현재값: " + customerContact.getManager() + ")\n" + "변경하지않으려면 엔터를치세요 >");
+			String manager = sc.nextLine();
+			if (manager != null && manager.trim().length() > 0) {
+				customerContact.setManager(manager);
+
+			}
+		}
 
 		System.out.println("정보가 수정되었습니다.");
 		System.out.println();
@@ -203,7 +203,7 @@ public class SmartPhone {
 			return;
 		}
 
-		for (int i = 0; i < contacts.length; i++) {
+		for (int i = 0; i < numOfContact; i++) {
 			contacts[i].printInfo();
 		}
 	}
@@ -291,7 +291,7 @@ public class SmartPhone {
 		while (true) {
 			str = sc.nextLine();
 
-			if (str != null & str.trim().length() != 0) {
+			if (str != null && str.trim().length() != 0) {
 				break;
 			} else {
 				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
@@ -308,29 +308,39 @@ public class SmartPhone {
 		String name = null;
 
 		while (true) {
-			name = sc.nextLine();
+			try {
+				name = sc.nextLine();
 
-			if (name != null & name.trim().length() != 0) {
-				// 배열의 요소에 같은 이름의 요소가 있는지 체크
-				boolean check = false;
+				if (name != null && name.trim().length() != 0) {
+					// 배열의 요소에 같은 이름의 요소가 있는지 체크
 
-				// 이름 검색
-				for (int i = 0; i < numOfContact; i++) {
-					if (name.equals(contacts[i].getName())) {
-						check = true;
+					// 이름 문자열 패턴
+					if (!Pattern.matches("^[a-zA-Z가-힣]*$", name)) {
+						throw new Exception("이름에는 영문자와 한글만 입력이 가능합니다. \n 다시 입력해주세요.");
+					}
+
+					boolean check = false;
+
+					// 이름 검색
+					for (int i = 0; i < numOfContact; i++) {
+						if (name.equals(contacts[i].getName())) {
+							check = true;
+							break;
+						}
+					}
+
+					if (check) {
+						System.out.println("같은 이름의 데이터가 존재합니다 \n 다시 입력하세요! >> .");
+					} else {
 						break;
 					}
-				}
 
-				if (check) {
-					System.out.println("같은 이름의 데이터가 존재합니다 \n 다시 입력하세요! >> .");
-					// continue;
 				} else {
-					break;
+					// System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
+					throw new Exception("예외발생! 공백은 허용하지 않습니다. 정상적인 문자를 입력하세요!");
 				}
-
-			} else {
-				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 
 		}
@@ -344,29 +354,40 @@ public class SmartPhone {
 
 		while (true) {
 
-			phoneNumber = sc.nextLine();
+			try {
 
-			if (phoneNumber != null && phoneNumber.trim().length() > 0) {
+				phoneNumber = sc.nextLine();
 
-				boolean check = false;
+				if (phoneNumber != null && phoneNumber.trim().length() > 0) {
 
-				// 중복 여부 체크
-				for (int i = 0; i < numOfContact; i++) {
-					if (phoneNumber.equals(contacts[i].getPhoneNumber())) {
-						check = true;
+					// 전화번호 패턴 확인
+					if (!Pattern.matches("^\\d{3}-\\d{4}-\\d{4}+$", phoneNumber)) {
+						throw new Exception("000-0000-0000 형식에 맞도록 입력해야합니다. \n 다시 입력해주세요");
+					}
+
+					boolean check = false;
+
+					// 중복 여부 체크
+					for (int i = 0; i < numOfContact; i++) {
+						if (phoneNumber.equals(contacts[i].getPhoneNumber())) {
+							check = true;
+							break;
+						}
+
+					}
+
+					if (check) {
+						// System.out.println("중복된 전화번호가 존재합니다 \n다시 입력해주세요. >> ");
+						throw new Exception("중복된 전화번호가 존재합니다. \n 다시 입력해주세요. >> ");
+					} else {
 						break;
 					}
 
-				}
-
-				if (check) {
-					System.out.println("중복된 전화번호가 존재합니다 \n다시 입력해주세요. >> ");
 				} else {
-					break;
+					System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
 				}
-
-			} else {
-				System.out.println("공백은 허용하지 않습니다. 정상적인 문자를 입력해주세요");
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 		}
 		return phoneNumber;
