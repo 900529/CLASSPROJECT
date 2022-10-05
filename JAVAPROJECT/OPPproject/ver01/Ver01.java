@@ -1,5 +1,8 @@
 package ver01;
 
 public class Ver01 {
-ccc
+	
+	public static void main(String[] args) {
+		
+	}
 }

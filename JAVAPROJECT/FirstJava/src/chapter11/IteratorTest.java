@@ -1,7 +1,7 @@
 package chapter11;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
-// import java.util.ArrayList; 이건 왜 안되어있지?!!
 
 public class IteratorTest {
 
@@ -9,7 +9,7 @@ public class IteratorTest {
 
 		LinkedList<Integer> list = new LinkedList<>();
 
-		list.add(10);
+		list.add(10); // 오토박싱
 		list.add(20);
 		list.add(30);
 		list.add(40);
