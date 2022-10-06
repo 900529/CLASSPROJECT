@@ -5,15 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class SmartPhone {
-
-	// 저장을 원래 배열에 했는데, List로~
-	// private Contact[] contacts;
-	// private int numOfContact;
-
-	List<Contact> contacts; // 변수의 이름 똑같이
+	
+	List<Contact> contacts; 
 	Scanner sc;
 
-	// 생성자에서는 초기화 작업했었는데,
 	private SmartPhone() { // 사이즈 왜 없애는건지 확인!
 		// contacts = new Contact[size];
 		// numOfContact = 0;
