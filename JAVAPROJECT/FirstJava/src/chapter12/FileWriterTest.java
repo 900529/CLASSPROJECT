@@ -14,27 +14,14 @@ public class FileWriterTest {
 		
 		Writer witer = null;
 		
-		try{
+		
 			writer = new FileWriter("c:\\Test\\text1.txt");
-			wirter.write(str);
-			wirter.write(ch);
-			wirter.write(charArr);
+			writer.write(str);
+			writer.write(ch);
+			writer.write(charArr);
 			System.out.println("파일에 텍스트 문자열");
 			
-		} catch (IOException e) {
-			e.printStackTrace();
-			
-		} finally {
-			if(wirter != null) {
-				try { 
-					writer.close();
-					
-				}
-				
-			}
-		}
 		
-	
 		
 		
 	}

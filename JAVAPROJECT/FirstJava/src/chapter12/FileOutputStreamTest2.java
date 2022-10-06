@@ -6,23 +6,22 @@ import java.io.IOException;
 
 public class FileOutputStreamTest2 {
 
-	public static void main(String[] args)  {
+	public static void main(String[] args) {
 
 		// 파일에 쓰기 위해서는 OutputStream => FileOutputStream
 		FileOutputStream outputStream = null;
 
 		try {
 			// 생성자에 지원의 경로 지정하고 스트림 인스턴스 생성
-			outputStream = new FileOutputStream("C:\\Test\\Testfile1.txt");
-			
+			outputStream = new FileOutputStream("C:\\Test\\Testfile2.txt");
+
 			String str = "OutputStream";
-					
-					byte[ ] byteArray = str.getBytes();
-			
+
+			byte[] byteArray = str.getBytes();
+
 			outputStream.write(byteArray);
-			
 			outputStream.close();
-			
+
 			System.out.println("파일에 데이터 쓰기 성공");
 
 		} catch (FileNotFoundException e) {
@@ -30,9 +29,8 @@ public class FileOutputStreamTest2 {
 			e.printStackTrace();
 
 		} catch (IOException e) {
-			System.out.println("출력 오류");
+			System.out.println("출력오류");
 			e.printStackTrace();
-
 		}
 	}
 }
