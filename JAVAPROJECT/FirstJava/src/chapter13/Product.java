@@ -24,12 +24,12 @@ public class Product {
 	}
 
 	public void setProduct(String product) {
-		
-		synchronized(this) {
+		this.product = product;
+
+		synchronized (this) {
 			notifyAll();
 		}
-		
-		this.product = product;
+
 	}
 
 }

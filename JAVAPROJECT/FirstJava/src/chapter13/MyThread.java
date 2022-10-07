@@ -9,8 +9,14 @@ public class MyThread extends Thread {
 		for (int i = 0; i < 10; i++) {
 			System.out.println("새로운 스레드가 생성되어 실행됩니다.");
 
-			Thread.sleep(500); // 현재 스레드의 상태를 block 상태로 변경 
-			
+//	try {
+//		Thread.sleep(1);
+//		System.out.println("새로운 스레드가 생성되어 실행합니다.");
+//	} catch (InterruptedException e) {
+//		// TODO Auto-generated catch block
+//		e.printStackTrace();
+//	}
+
 		}
 
 	}

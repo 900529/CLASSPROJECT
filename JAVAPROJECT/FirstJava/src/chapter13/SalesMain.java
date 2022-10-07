@@ -8,7 +8,7 @@ public class SalesMain {
 
 		Customer c1 = new Customer(p);
 		Customer c2 = new Customer(p);
-		
+
 		Seller seller = new Seller(p);
 
 		try {
@@ -22,15 +22,12 @@ public class SalesMain {
 			c2.join();
 
 			seller.join();
-		} catch (InterruptedException e) {
 
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
-		Seller seller = new Seller(p);
-
-		c1.start();
-		c2.start();
-
-		seller.start();
 	}
+
 }

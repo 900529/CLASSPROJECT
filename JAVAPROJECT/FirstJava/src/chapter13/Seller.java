@@ -1,6 +1,6 @@
 package chapter13;
 
-public class Seller extends Thread  {
+public class Seller extends Thread {
 
 	Product product;
 
@@ -11,12 +11,9 @@ public class Seller extends Thread  {
 
 	@Override
 	public void run() {
-product.setProduct("I Phone 14");
-System.out.println("판매하는 제품은 " + product.product+ "입니다");
-
+		product.setProduct("I Phone 14");
+		System.out.println("판매하는 제품은 " + product.product + "입니다");
 
 	}
-	
-	
-	
+
 }
