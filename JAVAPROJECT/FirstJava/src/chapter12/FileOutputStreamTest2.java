@@ -1,3 +1,4 @@
+
 package chapter12;
 
 import java.io.FileNotFoundException;
@@ -16,7 +17,7 @@ public class FileOutputStreamTest2 {
 			outputStream = new FileOutputStream("C:\\Test\\Testfile2.txt");
 
 			String str = "OutputStream";
-
+			
 			byte[] byteArray = str.getBytes();
 
 			outputStream.write(byteArray);
