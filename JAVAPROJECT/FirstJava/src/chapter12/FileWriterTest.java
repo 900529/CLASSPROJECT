@@ -13,6 +13,7 @@ public class FileWriterTest {
 		char[] charArr = { '부', '중' };
 
 		Writer writer = null;
+		
 
 		try {
 			writer = new FileWriter("c:\\Test\\Text1.txt");
