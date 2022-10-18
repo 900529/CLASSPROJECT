@@ -10,7 +10,7 @@ select ename, job
 from emp
 where sal > (select sal from emp where empno = 7499);
 
--- 45. 최소급여를 받는 사원의 이름, 담당업무 및 급여를 표시하시오. (그룹함수 사용)
+-- 45. 최소급여를 받는 사원의 이름, 담당업무 및 급여 표시 (그룹함수 사용)
 select ename, job, sal
 from emp
 where sal = (select min(sal) from emp);
@@ -53,40 +53,40 @@ from emp
 where sal >= (select avg(sal) from emp)
 order by sal;
 
--- 53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시하시오.
+-- 53. 이름에 K가 포함된 사원과 같은 부서에서 일하는 사원의 사원 번호와 이름을 표시
 select empno, ename
 from emp
 where deptno in (select deptno from emp where ename like '%K%'); 
 
--- 54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시하시오.
+-- 54. 부서위치가 DALLAS인 사원의 이름과 부서번호 및 담당업무를 표시
 select ename, deptno, job
 from emp
 where deptno= (select deptno from dept where loc = 'DALLAS') ;
 
--- 55. KING에게 보고하는 사원의 이름과 급여를 표시하시오.
+-- 55. KING에게 보고하는 사원의 이름과 급여를 표시
 select ename, sal
 from emp
 where mgr = (select empno from emp where ename = 'KING');
 
--- 56. RESEARCH 부서의 사원에 대한 부서번호, 사원이름 및 담당 업무를 표시하시오.
+-- 56. RESEARCH 부서의 사원에 대한 부서번호, 사원이름 및 담당 업무를 표시
 select deptno, ename, job
 from emp
 where deptno = (select deptno from dept where dname = 'RESEARCH');
 
 -- 57. 평균 월급보다 많은 급여를 받고 
 -- 이름에 M이 포함된 사원과 같은 부서에서 근무하는 사원의 
--- 사원 번호, 이름, 급여를 표시하시오.
+-- 사원 번호, 이름, 급여를 표시
 select empno, ename, sal
 from emp
 where sal >= (select avg(sal) from emp) and deptno in (select deptno from emp where ename like '%M%');
 
--- 58. 평균급여가 가장 적은 업무를 찾으시오. ** 
+-- 58. 평균급여가 가장 적은 업무 ** 
 select job, avg(sal)
 from emp
 group by job
 having avg(sal) = (select min(avg(sal)) from emp group by job);
 
--- 59. 담당업무가 MANAGER 인 사원이 소속된 부서와 동일한 부서의 사원을 표시하시오.
+-- 59. 담당업무가 MANAGER 인 사원이 소속된 부서와 동일한 부서의 사원을 표시
 select ename
 from emp
 where deptno in (select deptno from emp where job = 'MANAGER');
