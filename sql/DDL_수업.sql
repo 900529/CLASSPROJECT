@@ -1,11 +1,12 @@
--- DDL : 정의어 = 객체를 정의하는 명령어
+-- DDL : 정의어 => 객체를 정의하는 명령어
 
 -- 데이터의 저장 공간 생성 
--- create table 테이블 이름 ( 
+-- create table 테이블이름 ( 
 --     컬럼이름 타입 [제약조건], 
 --     컬럼이름 타입 [제약조건], 
---     ....
+--     ...
 -- );
+
 create table ddl_test (
     no number(3) not null unique,
     name varchar2(10),
@@ -13,7 +14,8 @@ create table ddl_test (
 );
 
 desc emp;
--- 사원 테이블과 유사한 구조의 사원번호, 사원이름, 급여 3개의 칼럼으로 구성된 EMP01 테이블 생성
+
+-- 사원 테이블과 유사한 구조의 사원번호, 사원이름, 급여 3개의 칼럼으로 구성된 EMP01 테이블을 생성해 봅시다.
 create table emp01
 (
     empno number(4),
@@ -23,9 +25,10 @@ create table emp01
 
 desc emp01;
 insert into emp01 (empno, ename, sal) values (1111, 'SON', 1000);
+
 select * from emp01;
 
---  as : 서브쿼리를 이용해서 기존 테이블 구조로 생성, 데이터 저장, 제약 조건은 카피되지 않는다!!
+--  as : 서브쿼리를 이용해서 기존 테이블 구조로 생성, 데이터 저장, 제약 조건은 카피되지 않는다!!!!
 create table emp02
 as
 select * from emp
@@ -34,6 +37,7 @@ select * from emp
 desc emp02;
 
 select * from emp02;
+
 
 -- 원하는 컬럼만 카피해서 생성
 create table emp03
@@ -61,6 +65,8 @@ select * from emp where 1=0
 desc emp05;
 select * from emp05;
 
+
+
 -- 테이블의 컬럼 수정 
 -- alter table 테이블 이름 add => 컬럼을 추가
 desc emp01;
@@ -75,6 +81,9 @@ alter table emp01 modify (job varchar2(30) default 'manager');
 alter table emp01 modify (job not null);
 desc emp01;
 
+
+
+
 -- 컬럼의 이름 변경
 alter table emp01 rename column job to jobs;
 desc emp01;
@@ -82,6 +91,8 @@ desc emp01;
 -- alter table 테이블 이름 drop => 컬럼을 삭제
 alter table emp01 drop column job;
 desc emp01;
+
+
 
 -- 테이블 객체 삭제
 drop table emp01;
@@ -99,12 +110,14 @@ truncate table emp03;
 
 desc emp03;
 
+
 -- 테이블의 이름 변경 : rename 기존테이블이름 to 새로운이름
 select * from emp03;
 
 rename emp03 to test03;
 
 select * from test03;
+
 
 create table emp01 (
     empno number(4),
@@ -137,7 +150,8 @@ create table emp01 (
     empno number(4) primary key, 
     ename varchar2(10) not null,
     job varchar2(9),
-    deptno number(2)    
+    deptno number(2)
+    
 );
 
 -- 기본키 제약조건 정의 : 제약조건의 이름 등록
@@ -148,6 +162,8 @@ create table emp01 (
     deptno number(2)
     
 );
+
+
 
 -- 외래키 제약 조건 정의
 create table emp01 (
