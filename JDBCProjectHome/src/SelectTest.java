@@ -14,8 +14,9 @@ public class SelectTest {
 
 			// 2. Connection 객체 생성
 			String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-			// String dbUrl = "jdbc:mysql://localhost:3306/project";
 			Connection conn = DriverManager.getConnection(dbUrl, "system", "yena");
+		//	String dbUrl = "jdbc:mysql://localhost:3306/project";
+		//	Connection conn = DriverManager.getConnection(dbUrl, "root", "admin");
 
 			if (conn != null) {
 				System.out.println("데이터베이스 연결");
