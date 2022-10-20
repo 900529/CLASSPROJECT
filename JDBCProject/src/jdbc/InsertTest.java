@@ -14,7 +14,7 @@ public class InsertTest {
 		// 1. 드라이버 로드 ( 생략 가능 )
 		try {
 			
-			// 2. Connection 객체 생성			
+			// 2. Connectin 객체 생성			
 			String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 			//String dbUrl = "jdbc:mysql://localhost:3306/project";
 			Connection conn = DriverManager.getConnection(dbUrl, "scott", "tiger");
@@ -33,8 +33,6 @@ public class InsertTest {
 			if(result>0) {
 				System.out.println("입력되었습니다.");
 			}
-			
-			
 			
 			pstmt.close();
 			conn.close();

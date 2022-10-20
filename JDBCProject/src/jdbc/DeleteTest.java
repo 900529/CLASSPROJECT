@@ -14,41 +14,28 @@ public class DeleteTest {
 		// 1. 드라이버 로드 ( 생략 가능 )
 		try {
 			
-			// 2. Connection 객체 생성			
+			// 2. Connectin 객체 생성			
 			String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 			//String dbUrl = "jdbc:mysql://localhost:3306/project";
 			Connection conn = DriverManager.getConnection(dbUrl, "scott", "tiger");
 			
 			// 3. Statement / PreparedStatement
 			// insert
-			String sql = "delete from dept where deptno = ?";
+			String sql = "delete from dept where deptno=?";
 			
 			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, 50);
 			
-		
 			int result = pstmt.executeUpdate();
 			
 			if(result>0) {
 				System.out.println("삭제되었습니다.");
 			}
 			
-			
-			
 			pstmt.close();
 			conn.close();
 			
-			
-			
-			
-			
-			
-			
-			
-			
-			// 4. ResultSet
-			
-			
+
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -56,5 +43,6 @@ public class DeleteTest {
 		}
 
 	}
-
+	
 }
+

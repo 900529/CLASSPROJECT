@@ -16,7 +16,7 @@ public class SelectTest2 {
 			// 생략 가능!
 			//Class.forName("oracle.jdbc.driver.OracleDriver");
 			
-			// 2. Connection 객체 생성			
+			// 2. Connectin 객체 생성			
 			String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
 			//String dbUrl = "jdbc:mysql://localhost:3306/project";
 			Connection conn = DriverManager.getConnection(dbUrl, "scott", "tiger");
