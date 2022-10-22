@@ -1,6 +1,7 @@
 package dept.dao;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -8,6 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import dept.Controller;
 import dept.domain.Dept;
 
 public class OracleDao implements Dao {
@@ -28,8 +30,7 @@ public class OracleDao implements Dao {
 
 			while (rs.next()) {
 				// 각 행의 데이터를 Dept 객체로 생성 -> List 추가
-				// list.add(new Dept(rs.getInt("deptno"), rs.getString("dname"),
-				// rs.getString("loc")));
+				// list.add(new Dept(rs.getInt(1), rs.getString("dname"), rs.getString(3)));
 				list.add(rowToDept(rs));
 			}
 		} finally {
@@ -42,6 +43,7 @@ public class OracleDao implements Dao {
 		}
 
 		return list;
+
 	}
 
 	@Override
@@ -71,12 +73,13 @@ public class OracleDao implements Dao {
 				pstmt.close();
 			}
 		}
-
 		return dept;
 	}
 
+	// 수정할려면 여기있는 메소드로만
 	private Dept rowToDept(ResultSet rs) throws SQLException {
-		return new Dept(rs.getInt("deptno"), rs.getString("dname"), rs.getString("loc"));
+		return new Dept(rs.getInt("deptno"), rs.getString("dame"), rs.getString("loc"));
+
 	}
 
 	@Override
@@ -85,7 +88,7 @@ public class OracleDao implements Dao {
 		int result = 0;
 		PreparedStatement pstmt = null;
 
-		// 입력 처리
+		// 입력처리
 		String sql = "insert into dept values (?, ?, ?)";
 
 		try {
@@ -136,19 +139,16 @@ public class OracleDao implements Dao {
 
 		// 삭제 처리
 		String sql = "delete from dept where deptno=?";
-
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, deptno);
-	
+
 			result = pstmt.executeUpdate();
 		} finally {
-			if(pstmt != null) {
-				pstmt.close();
+			if (pstmt != null) {
 			}
 		}
 
 		return result;
 	}
-
 }
