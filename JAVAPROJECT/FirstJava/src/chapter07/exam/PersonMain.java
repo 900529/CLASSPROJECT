@@ -16,9 +16,7 @@ public class PersonMain {
 
 		System.out.println();
 		System.out.println();
-		f.printSchoolInfo(); 
-		
-		
+		f.printSchoolInfo();
 
 		Person p1 = (Person) m;
 		Person p2 = f;

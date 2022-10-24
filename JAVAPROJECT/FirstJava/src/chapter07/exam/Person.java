@@ -63,11 +63,11 @@ public class Person {
 
 	}
 
-	// (3) 출력하는 메소드
+	// (3)
 	void printInfo() {
 		System.out.printf("안녕하세요, 저는 %s입니다. %d살 입니다.", this.name, getAge());
 	} // System.out.printf : 문자열을 서식문자를 이용하여 형식화된 내용으로 출력할 때 사용
-		// %s 문자열형식, %d 정수형식
+	  // %s 문자열형식, %d 정수형식
 
 	// 날짜 테스트
 	public static void main(String[] args) {

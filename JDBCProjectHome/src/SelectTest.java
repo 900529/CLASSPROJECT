@@ -14,7 +14,7 @@ public class SelectTest {
 
 			// 2. Connection 객체 생성
 			String dbUrl = "jdbc:oracle:thin:@localhost:1521:xe";
-			Connection conn = DriverManager.getConnection(dbUrl, "system", "yena");   // 학원계정 scott tiger
+			Connection conn = DriverManager.getConnection(dbUrl, "system", "yena");
 		//	String dbUrl = "jdbc:mysql://localhost:3306/project";
 		//	Connection conn = DriverManager.getConnection(dbUrl, "root", "admin");
 
