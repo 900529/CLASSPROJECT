@@ -1,44 +1,58 @@
-DROP INDEX SCOTT.PK_member;
+DROP INDEX SCOTT.PK_reservation;
 
-/* member */
-DROP TABLE SCOTT.member 
+/* reservation */
+DROP TABLE SCOTT.reservation 
 	CASCADE CONSTRAINTS;
 
-/* member */
-CREATE TABLE SCOTT.member (
-	memberNo INTEGER NOT NULL, /* memberNo */
-	memberName VARCHAR2(50), /* memberName */
-	memberAddres VARCHAR2(255), /* memberAddres */
-	memberPhone VARCHAR2(30), /* memberPhone */
-	memberId INTEGER, /* memberId */
-	memberPwd VARCHAR2(50), /* memberPwd */
-	memberGrade INTEGER /* memberGrade */
+/* reservation */
+CREATE TABLE SCOTT.reservation (
+	reservNo INTEGER NOT NULL, /* reservNo */
+	memberNo INTEGER, /* memberNo */
+	hallNo INTEGER, /* hallNo */
+	reservDate DATE, /* reservDate */
+	reservTime DATE /* reservTime */
 );
 
-COMMENT ON TABLE SCOTT.member IS 'member';
+COMMENT ON TABLE SCOTT.reservation IS 'reservation';
 
-COMMENT ON COLUMN SCOTT.member.memberNo IS 'memberNo';
+COMMENT ON COLUMN SCOTT.reservation.reservNo IS 'reservNo';
 
-COMMENT ON COLUMN SCOTT.member.memberName IS 'memberName';
+COMMENT ON COLUMN SCOTT.reservation.memberNo IS 'memberNo';
 
-COMMENT ON COLUMN SCOTT.member.memberAddres IS 'memberAddres';
+COMMENT ON COLUMN SCOTT.reservation.hallNo IS 'hallNo';
 
-COMMENT ON COLUMN SCOTT.member.memberPhone IS 'memberPhone';
+COMMENT ON COLUMN SCOTT.reservation.reservDate IS 'reservDate';
 
-COMMENT ON COLUMN SCOTT.member.memberId IS 'memberId';
+COMMENT ON COLUMN SCOTT.reservation.reservTime IS 'reservTime';
 
-COMMENT ON COLUMN SCOTT.member.memberPwd IS 'memberPwd';
-
-COMMENT ON COLUMN SCOTT.member.memberGrade IS 'memberGrade';
-
-CREATE UNIQUE INDEX SCOTT.PK_member
-	ON SCOTT.member (
-		memberNo ASC
+CREATE UNIQUE INDEX SCOTT.PK_reservation
+	ON SCOTT.reservation (
+		reservNo ASC
 	);
 
-ALTER TABLE SCOTT.member
+ALTER TABLE SCOTT.reservation
 	ADD
-		CONSTRAINT PK_member
+		CONSTRAINT PK_reservation
 		PRIMARY KEY (
+			reservNo
+		);
+
+ALTER TABLE SCOTT.reservation
+	ADD
+		CONSTRAINT FK_member_TO_reservation
+		FOREIGN KEY (
 			memberNo
+		)
+		REFERENCES SCOTT.member (
+			memberNo
+		);
+
+ALTER TABLE SCOTT.reservation
+	ADD
+		CONSTRAINT FK_hall_TO_reservation
+		FOREIGN KEY (
+			hallNo
+		)
+		REFERENCES SCOTT.hall (
+			hallNo
 		);
