@@ -8,5 +8,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/cheoho-hi/Desktop/mysql-connector-java-8.0.30.jar"/>
 	<classpathentry kind="lib" path="C:/Users/cheoho-hi/Desktop/ojdbc8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/cheoho-hi/Desktop/lib/mysql-connector-java-8.0.30.jar"/>
+	<classpathentry kind="lib" path="C:/Users/cheoho-hi/Desktop/lib/ojdbc8.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
