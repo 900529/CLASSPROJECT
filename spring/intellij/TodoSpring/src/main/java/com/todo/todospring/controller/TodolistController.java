@@ -1,26 +1,25 @@
 package com.todo.todospring.controller;
 
 import com.todo.todospring.service.TodoService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class TodolistController {
+public class TodoListController {
 
-    @Autowired
+    //@Autowired
     private final TodoService todoService;
 
-    public TodolistController(TodoService todoService) {
+    public TodoListController(TodoService todoService) {
         this.todoService = todoService;
     }
 
     @RequestMapping("/todo/list")
-    public String getTodoLIst() {
+    public String getTodoList(Model model){
 
-        todoService.test();
+        model.addAttribute("todoList", todoService.getTodoList());
+
         return "todo/list";
-
     }
-
 }
