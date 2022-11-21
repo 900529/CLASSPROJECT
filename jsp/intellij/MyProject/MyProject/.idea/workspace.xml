@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="852d1d4b-827a-4e35-b105-f8ee42629816" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../../firstapp/FirstApp/src/main/java/com/firstcoding/firstapp/MyServlet.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../../firstapp/FirstApp/src/main/webapp/login.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../.gitignore" afterDir="false" />
     </list>
+=======
+    <list default="true" id="211e3fec-6a20-428b-9266-1706390b96a9" name="Changes" comment="" />
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +23,17 @@
       <ProjectState />
     </projectState>
   </component>
+<<<<<<< HEAD
+=======
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
@@ -32,12 +47,17 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+<<<<<<< HEAD
   <component name="ProjectId" id="2HGaXRrFOqL4VLyKGfpCp8Wchr2" />
+=======
+  <component name="ProjectId" id="2HCwxlwY4HryUYfNfqbTfrcSOUE" />
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -45,6 +65,20 @@
     "WebServerToolWindowFactoryState": "false"
   }
 }]]></component>
+=======
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
+  }
+}</component>
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
   <component name="RunManager">
     <configuration name="Tomcat 9.0.68" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.68" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -57,7 +91,11 @@
         </artifact>
       </deployment>
       <server-settings>
+<<<<<<< HEAD
         <option name="BASE_DIRECTORY_NAME" value="4934d92c-bbca-46e4-a19c-19e4cba9fab5" />
+=======
+        <option name="BASE_DIRECTORY_NAME" value="f013ed39-4a16-4908-82d6-8c18243ac5fe" />
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -65,7 +103,11 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
+<<<<<<< HEAD
         <option name="DEBUG_PORT" value="63763" />
+=======
+        <option name="DEBUG_PORT" value="49622" />
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -138,12 +180,23 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
+<<<<<<< HEAD
       <changelist id="852d1d4b-827a-4e35-b105-f8ee42629816" name="Changes" comment="" />
       <created>1667913932479</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1667913932479</updated>
       <workItem from="1667913935345" duration="1233000" />
+=======
+      <changelist id="211e3fec-6a20-428b-9266-1706390b96a9" name="Changes" comment="" />
+      <created>1667802638751</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667802638751</updated>
+      <workItem from="1667802641019" duration="477000" />
+      <workItem from="1667805237548" duration="1497000" />
+      <workItem from="1667869812677" duration="14373000" />
+>>>>>>> b26f068bcc3fa17afdf514dd8830421980818811
     </task>
     <servers />
   </component>
