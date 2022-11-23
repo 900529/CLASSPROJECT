@@ -1,11 +1,13 @@
 package com.firstcoding.mvc.springmvc2.controller;
 
 
+import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
+@Log4j2
 public class SampleController {
 
     @RequestMapping("/sample")
@@ -19,6 +21,8 @@ public class SampleController {
 
     @RequestMapping("/sample2")
     public String getStringPage() {
+
+        log.info("kkk");
         return "sample2";  // /WEB-INF/views/sample2.jsp
     }
 
