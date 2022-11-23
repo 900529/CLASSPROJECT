@@ -1,5 +1,6 @@
 package com.firstcoding.mvc.springmvc2.controller;
 
+import com.firstcoding.mvc.springmvc2.domain.Report;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ import java.io.IOException;
 
 @Log4j2
 @Controller
-@RequestMapping
+@RequestMapping("/report")
 public class FileUploadController {
 
     @GetMapping
@@ -24,7 +25,11 @@ public class FileUploadController {
         return "/report/reportForm";
     }
 
-    @PostMapping
+    // 1. @RequestParam
+    // 2. MultipartHttpServletRequest
+    // 3. 커맨드 객체
+
+    @PostMapping("/submit1")
     public String result1(
             @RequestParam("snum") String snum,
             @RequestParam("sname") String sname,
@@ -49,21 +54,20 @@ public class FileUploadController {
 
         model.addAttribute("snum", snum);
         model.addAttribute("sname", sname);
-        model.addAttribute(("fileName", report.getOriginalFilename());
+        model.addAttribute("fileName", report.getOriginalFilename());
 
         return "report/submit1";
     }
 
     @PostMapping("/submit2")
     public String result2(
-            MultipartHttpServletRequest request.
+            MultipartHttpServletRequest request,
             Model model
     ) throws IOException {
 
         String snum = request.getParameter("snum");
         String sname = request.getParameter("sname");
         MultipartFile report = request.getFile("report");
-
 
         log.info("학번 : " + snum );
         log.info("이름 : " + sname);
@@ -81,7 +85,7 @@ public class FileUploadController {
 
         model.addAttribute("snum", snum);
         model.addAttribute("sname", sname);
-        model.addAttribute(("fileName", report.getOriginalFilename());
+        model.addAttribute("fileName", report.getOriginalFilename());
 
         return "report/submit2";
     }
@@ -89,7 +93,7 @@ public class FileUploadController {
     @PostMapping("/submit3")
     public String result3(
             Report report,
-            MultipartHttpServletRequest request.
+            MultipartHttpServletRequest request,
             Model model
     ) throws IOException {
 
@@ -105,11 +109,11 @@ public class FileUploadController {
         log.info(dirRealPath);
 
         // 저장
-        report.transferTo(new File(dirRealPath, report.getOriginalFilename()));
+        report.getReport().transferTo(new File(dirRealPath, report.getReport().getOriginalFilename()));
 
-        model.addAttribute("snum", getSnum);
-        model.addAttribute("sname", getSname);
-        model.addAttribute(("fileName", report.getReport().getOriginalFilename());
+        model.addAttribute("snum", report.getSnum());
+        model.addAttribute("sname", report.getSname());
+        model.addAttribute("fileName", report.getReport().getOriginalFilename());
 
         return "report/submit3";
     }
