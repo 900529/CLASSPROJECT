@@ -13,11 +13,6 @@ public interface DeptMapper2 {
   @Select("select * from dept")
     List<DeptDTO> selectAll();
 
-    // 검색 타입과 키워드를 받아서 검색 결과를 반환
-    List<DeptDTO> selectByOption(DeptSearchOption searchOption);
-
-    List<DeptDTO> selectByDeptnos(List<Integer> deptnos);
-
     // 수정 / 상세 페이지
     @Select("select * from dept where deptno=#{deptno}")
     DeptDTO selectBydeptno(int deptno);
