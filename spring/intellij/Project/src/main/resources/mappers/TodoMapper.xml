@@ -1,0 +1,21 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.todo.project.mapper.TodoMapper">
+
+
+    <insert id="insertToDo"
+            parameterType="com.todo.project.domain.TodoDTO"
+>
+        insert into tbl_todo (todo, dueDate, writer) values (#{todo}, #{dueDate}, #{writer})
+
+    </insert>
+
+    <update id = "updateTodo"
+            parameterType="com.todo.project.domain.TodoDTO"
+>
+        update tbl_todo set todo=#{todo}, duedate=#{dueDate}, finished=#{finished} where tno=#{tno}
+
+    </update>
+</mapper>
