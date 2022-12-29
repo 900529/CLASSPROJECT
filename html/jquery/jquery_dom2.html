@@ -18,7 +18,7 @@
         $('<h3></h3>').prependTo('body')
         $('body').prepend('<h4></h4>') */
 
-      /* $('<h1></h1>').html('hello!!!').appendTo('body')
+       /* $('<h1></h1>').html('hello!!!').appendTo('body')
        $('<h1>DOM h1 create!!</h1>').appendTo('body')
 
 
@@ -29,22 +29,47 @@
 
         ////////////////////////////////////////
 
-        let html1 = '<a href="#">link</a>'
+       /* let html1 = '<a href="#">link</a>'
         let html2 = '<p>TEST</p>'
         let html3 = '<di>DIV Tag</div>'
         
-        $('body').append(html1, html2, html3, '<hr>')
+        $('body').append(html1, html2, html3, '<hr>') */
 
+        ////////////////////////////////////////////////
 
+        let links = [
+        {name : '네이버', url : 'http://www.naver.com'},
+        {name : '다음', url : 'http://www.daum.net'},
+        {name : '카카오', url : 'http://www.kakao.com'}
+        ]
 
-    })
-    
+        
+      /*  $.each(links, function(index, item){
+          $('#list').append(function(){
+             let html = '<h3> <a href="'+ietm.url+'">'+item.name+'</a> </h3>'
+             return html
+          })
+        }) */
+
+        $('div').append(function(index){
+            return '<h3> <a href="'+links[index].url+'">'+links[index].name+'</a></h3>'
+        }
+
 
 
     </script>
 
 </head>
 <body>
+
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+
+   <!-- <div id="list"></div> --> 
+
     
 </body>
 </html>
